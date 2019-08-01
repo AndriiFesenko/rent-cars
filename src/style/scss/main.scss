@@ -1,0 +1,495 @@
+
+@import './fonts.scss';
+
+$mainColor: rgb(219, 29, 29);
+
+.container {
+    height: 800px;
+    min-width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+header {
+    width: 100%;
+    height: 100vh;
+    // относительный путь через webpack не работает
+    > img {
+        width: 100%;
+        position: absolute;
+        height: inherit;
+    }
+    .top-side {
+        position: relative;
+        display: flex;
+        padding: 20px 20px 20px 40px;
+        box-sizing: border-box;
+        justify-content: space-between;
+        height: auto;
+        align-items: center;
+        a {
+            text-decoration: none;
+            // margin-left: 20px;
+        }
+        img:first-of-type {
+            height: 70px;
+            width: 70px;
+        }
+        img:last-of-type{
+            height: 50px;
+            width: 100px;
+        }
+        ul#cars-menu {
+            display: flex;
+            margin: 0px 100px 0px 0px;
+            >li {
+                position: relative;
+                margin: 0px 40px;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                >ul.rentCarsList, >ul.transfersCarsList {
+                    position: absolute;
+                    top: 36px;
+                    right: 0px;
+                    display: none;
+                    flex-direction: column;
+                    margin: 0px;
+                    box-sizing: border-box;
+                    border-top: 5px solid $mainColor;
+                    >li {
+                        color:white;
+                        margin: 0px;
+                        min-width: 80px;
+                        height: auto;
+                        list-style: none;
+                        a {
+                            display: block;
+                            height: auto;
+                            min-width: 80px;
+                            font-family: "ProximaLight";
+                            text-align: start;
+                            font-size: 20px;
+                            padding: 10px 100px 10px 30px;
+                            color: white;
+                        }
+                    }
+                }
+               >a {
+                color: white;
+                text-decoration: none;
+                text-align: center;
+                font-family: "ProximaLight";
+                font-size: 20px;
+                max-width: 120px;
+                padding: 2px 10px;
+               }
+               &:hover {
+                   cursor: pointer;
+                    ul {
+                       background-color: rgb(19, 18, 18);
+                       a {
+                           color: white;
+                       }
+                        a:hover {
+                            background-color: $mainColor;
+                            color:white;
+                       }
+                   }
+                    >a {
+                        color: white;
+                        background-color: $mainColor;
+                    }
+               }
+            }
+        }
+    }
+}
+main {
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0px;
+
+    >div.label {
+        position: absolute;
+        left: -180px;
+        top: 280px;
+        transform: rotateZ(-90deg);
+        font-size: 150px;
+        color: rgba(0,0,0,0.1);
+        font-family: "ProximaExtraBold";
+    }
+    hr {
+        width: 70%;
+        background-color: $mainColor;
+        height: 0.8px;
+    }
+    .carParkTitle {
+        font-size: 25px;
+        font-family: "ProximaBold";
+    }
+    .main-menu-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 30%;
+        input {
+            margin: 0px ;
+            border: none;
+            color: white;
+            background-color: $mainColor;
+            &:hover {
+                color: black;
+            }
+        }
+    }
+    .wrapper {
+        // width: 100%;
+        // min-height: 500px;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        // padding: 0px 200px;
+
+        width: 72%;
+        min-height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        // justify-content: flex-start;
+        box-sizing: border-box;
+        .block {
+            // width: 60%;
+            // display: flex;
+            // justify-content: space-between;
+            // margin: 0px 0px;
+            // padding: 20px 40px;
+            width: auto;
+            max-height: 400px;
+            padding: 20px 0px;
+            box-sizing: border-box;
+            margin: 10px 10px;
+            // &:nth-child(even) {
+            //     flex-direction: row-reverse;
+            // }
+            &:hover {
+                box-shadow: 0px 0px 10px 3px #d8d4d4;
+                cursor: pointer;
+            }
+            .info{
+                // width: 65%;
+                padding: 0px 20px;
+                box-sizing: border-box;
+                h2 {
+                    font-family: "ProximaBold";
+                    font-size: 18px;
+                }
+                p {
+                    font-family: "ProximaRegular";
+                    margin: 0px;
+                }
+                h3 {
+                    font-family: "ProximaBold";
+                    font-size: 18px;
+                    letter-spacing: 1px;
+                    display: flex;
+                    align-items: center;
+                    
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                    input {
+                        margin-left: 20px;
+                        margin-bottom: 0px;
+                        border: 1px solid black;
+                        color: black;
+                        font-family: "ProximaRegular";
+                        font-size: 12px;
+                        box-sizing: border-box;
+                        padding: 0px 20px;
+                        &:hover {
+                            background-color: $mainColor;
+                            border: 1px solid $mainColor;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .image-box{
+                // height: 100%;
+                // width: 35%;
+                padding: 0px 20px;
+                box-sizing: border-box;
+                img{
+                    height: 200px;
+                    width: 300px;
+                }
+            }
+        }
+    }
+    
+}
+article {
+    padding: 100px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1ecec;
+    box-sizing: border-box;
+    .description {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 70%;
+        height: auto;
+        div {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 220px;
+            width: 250px;
+            margin-top: 20px;
+            h3 {
+                font-size: 22px;
+                font-family: "ProximaRegular";
+                text-align: center;
+                margin: 20px 0px 0px 0px;
+            }
+            img {
+                height: 50px;
+                width: 50px;
+            }
+                .iconWrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100px;
+                    width: 100px;
+                    border: 2px solid $mainColor;
+                    border-radius: 50%;
+                }
+            }
+        }
+}
+footer {
+    background-color: black;
+    display: flex;
+    padding: 30px 50px;
+    justify-content: space-around;
+    >div {
+        display: flex;
+        flex-direction: column;
+        .title {
+            font-family: "ProximaBold";
+            text-transform: uppercase;
+            font-size: 15px;
+            line-height: 30px;
+            color: #817c7c;
+        }
+        a {
+            text-decoration: none;
+            font-family: "ProximaRegular";
+            color: white;
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+    .contacts {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+        border-left: 2px solid $mainColor;
+        padding: 0px 20px;
+        >div {
+            display: flex;
+        }
+        img {
+            height: 30px;
+            width: 30px;
+        }
+        p {
+            margin: 0px;
+            color: white;
+        }
+        span {
+            color: white;
+        }
+        .tel {
+            display: flex;
+            flex-direction: column;
+            a {
+                text-decoration: none;
+                color: white;
+                font-family: "ProximaLight";
+                width: 100%;
+                font-size: 25px;
+                &:hover {
+                    border-bottom: 1px solid $mainColor;
+                    box-sizing: border-box;
+                }
+            }
+            p {
+                font-family: "ProximaLight";
+                display: flex;
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
+.dialog-wrapper {
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    background-color: rgba(0,0,0,0.7);
+    .ui-dialog {
+        background-color: white !important;
+        height: 80% !important;
+        width: 80% !important; 
+        padding: 20px 40px !important;
+        box-sizing: border-box;
+        border-radius: 5px;
+        .ui-dialog-titlebar {
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            span {
+                font-size: 30px;
+                font-family: "Proximabold";
+                text-align: center;
+            }
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #000;
+                color: #000;
+                font-family: "ProximaRegular";
+                font-size: 12px;
+                &:hover {
+                    color: white;
+                    background-color: $mainColor;
+                    border: none;
+                }
+            }
+        }
+        #dialog {
+            width: 100% !important;
+            height: 90% !important;
+            display: flex;
+            .dialog-img-container {
+                width: 50%;
+                height: 100%;
+                overflow: hidden;
+                margin-right: 10px;
+                .main-place-img {
+                    position: relative;
+                    display: flex;
+                    height: 80%;
+                    width: 100%;
+                    img { 
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        margin: 0px;
+                    }
+                }
+                .dialog-img-wrapper {
+                    display: flex;
+                    width: 100%;
+                    height: 20%;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    padding: 10px 0px;
+                    box-sizing: border-box;
+                    div {
+                        flex-grow: 1;
+                        flex-basis: 0;
+                        padding: 5px;
+                        box-sizing: border-box;
+                        &:first-of-type {
+                            padding-left: 0px;
+                        }
+                        &:last-of-type {
+                            padding-right: 0px;
+                        }
+                    }
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        &.notActive {
+                            opacity: 0.5;
+                        }
+                        &.active {
+                            opacity: 1;
+                            border: 1.5px solid $mainColor;
+                            box-sizing: border-box;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            .dialog-info {
+                width: 50%;
+                height: auto;
+                div {
+                    display: flex;
+                    align-items: center;
+                    margin: 20px 0px;
+                    hr {
+                        flex-grow: 8;
+                        background-color: $mainColor;
+                        height: 1px;
+                        // width: 50%;
+                        margin: 0px 10px;
+
+                    }
+                    p {
+                        flex-grow: 1;
+                        margin: 0px;
+                        font-size: 15px;
+                        font-family: "ProximaRegular";
+                    }
+                }
+                .title {
+                    display: flex;
+                    justify-content: space-between;
+                    img {
+                        height: 25px;
+                        width: 25px;
+                        margin-right: 10px;
+                    }
+                    h3 {
+                        margin: 0px;
+                        font-size: 30px;
+                        font-family: "ProximaBold";
+                    }
+                    h4 {
+                        margin: 0px;
+                        font-size: 30px;
+                        font-family: "ProximaBold";
+                    }
+                }
+            }
+            
+        }
+    }
+    .ui-dialog-buttonset {
+        display: none;
+    }
+}

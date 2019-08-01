@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./dist/app.js" async></script>
+    <link rel="stylesheet" href="./src/style/css/normalize.css">
+    <link rel="stylesheet" href="./src/style/css/sceleton.css">
+    <link rel="stylesheet" href="./dist/app.css">
+   <title>Аренда автомобилей в Киеве - LimoPullman</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./src/images/2018-mercedes-s-class-facelift.jpg" alt="">
+            <div class="top-side">
+                <div>
+                    <a href="#">
+                        <img src="./src/images/logo.png" alt="mercedesSign.png">
+                        <!-- <img src="./src/images/amg-noel.jpg" alt="amg-noel.jpg"> -->
+                    </a>
+                </div>
+                <ul id="cars-menu">
+                    <li><a href="#">Главная</a></li>
+                    <li>
+                        <a href="#" id="rentCars">Аренда авто</a>
+                        <ul class="rentCarsList">
+                            <li>
+                                <a href="#wrapper" title="Нажмите для просмотра">S-Class</a>
+                            </li>
+                            <li>
+                                <a href="#wrapper" title="Нажмите для просмотра">E-Class</a>
+                            </li>
+                            <li>
+                                <a href="#wrapper" title="Нажмите для просмотра">ML-Class</a>
+                            </li>
+                            <li>
+                                <a href="#wrapper" title="Нажмите для просмотра">G-Class</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" id="transfers">Трансферы</a>
+                        <ul class="transfersCarsList">
+                            <li>
+                                <a href="#wrapper">S-Class</a>
+                            </li>
+                            <li>
+                                <a href="#wrapper">E-Class</a>
+                            </li>
+                            <li>
+                                <a href="#wrapper">ML-Class</a>
+                            </li>
+                            <li>
+                                <a href="#wrapper">G-Class</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#footer">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="center-side">
+
+            </div>
+        </header>
+        <main>
+            <div class="label">car park</div>
+            <div class="main-menu-buttons">
+                <input type="button" id="showRentCars" value="Аренда авто">
+                <input type="button" id="showTransfersCars" value="Трансферы">
+            </div>
+            <hr>
+            <div class="carParkTitle"></div>
+            <div class="wrapper" id="wrapper"></div>
+        </main>
+        <article>
+            <h2>Наши преимущества</h2>
+            <div class="description">
+                <div>
+                    <div class="iconWrapper"><img src="./src/images/iconExperience.png" alt="iconExperience.png"></div>
+                    <h3>Многолетний опыт</h3>
+                </div>
+                <div>
+                    <div class="iconWrapper"><img src="./src/images/iconIndividual.jpg" alt="iconIndividual.jpg"></div>
+                    <h3>Индивидуальный подход</h3>
+                </div>
+                <div>
+                    <div class="iconWrapper"><img src="./src/images/iconDriver.png" alt="iconDriver.png"></div>
+                    <h3>Опытные водители</h3>
+                </div>
+                <div>
+                    <div class="iconWrapper"><img src="./src/images/iconBestPrice.png" alt="iconBestPrice.png"></div>
+                    <h3>Доступные цены</h3>
+                </div>
+                <div>
+                    <div class="iconWrapper"><img src="./src/images/iconWatches.png" alt="iconWatches.png"></div>
+                    <h3>Пунктуальность</h3>
+                </div>
+                <div>
+                    <div class="iconWrapper"><img src="./src/images/iconCarWash.png" alt="iconCarWash.png"></div>
+                    <h3>Перед каждой поездкой автомобиль готовится под клиента</h3>
+                </div>
+                <div>
+                    <div class="iconWrapper"><img src="./src/images/iconGoodDeal.png" alt="iconGoodDeal.png"></div>
+                    <h3>Скидки и выгодные предложения</h3>
+                </div>
+                <div>
+                    <div class="iconWrapper"><img src="./src/images/icon24Hours.png" alt="icon24Hours.png"></div>
+                    <h3>Готовы в любое время 24/7</h3>
+                </div>
+            </div>
+        </article>
+        <footer id="footer">
+            <div class="aboutUs">
+                <div class="title">О нас</div>
+                <a href="#">Контакты</a>
+                <a href="#">О компании</a>
+                <a href="#">Отзывы</a>
+            </div>
+            <div class="weOffer">
+                <div class="title">Услуги</div>
+                <a href="#">Авто на свадьбу</a>
+                <a href="#">Междугородние перевозки</a>
+                <a href="#">Трансферы</a>
+                <a href="#">VIP такси</a>
+                <a href="#">Транспортное обслуживание</a>
+                <a href="#">Бизнес-такси</a>
+            </div>
+            <div class="information">
+                <div class="title">Информация</div>
+                <a href="#">Как оформить заказ</a>
+                <a href="#">Условия</a>
+                <a href="#">Способы оплаты</a>
+                <a href="#">Скидки</a>
+                <a href="#">Что входит в трансфер</a>
+                <a href="#">Советы</a>
+            </div>
+            <div class="ourPark">
+                <div class="title">Автопарк</div>
+                <a href="#wrapper">S-Class</a>
+                <a href="#wrapper">E-Class</a>
+                <a href="#wrapper">ML-Class</a>
+                <a href="#wrapper">G-Class</a>
+                <a href="#wrapper">Maybach</a>
+            </div>
+            <div class="contacts">
+                <div>
+                    <img src="./src/images/pin.jpg" alt="pin.jpg">
+                    <p>Работаем по всей Украине</p>
+                </div>
+                <div class="tel">
+                    <a href="tel: +380985168071">+38-098-516-80-71</a>
+                    <p><img src="./src/images/phone.png" alt="">  Круглосуточно</p>
+                </div>
+                <div class="socialApps">
+                    <a href="https://api.whatsapp.com/send?phone=380985168071" class="watsApp" target="_blank">
+                        <img src="./src/images/whatsApp.jpg" alt="whatsApp.jpg">
+                    </a>
+                    <a href="viber://add?number=380985168071" class="viber" target="_blank">
+                        <img src="./src/images/viber.png" alt="viber.png">
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <div id="dialog" title="Basic dialog" style="display: none"></div>
+    </div>
+    <div class="dialog-wrapper" style="display: none"></div>
+</body>
+</html>

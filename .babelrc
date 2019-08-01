@@ -1,0 +1,10 @@
+// настройка babel
+
+// babel-preset-env — пресет, определяющий, 
+// какие новые возможности JavaScript нужно транспилировать;
+
+{
+    "presets": [
+        "@babel/preset-env"
+    ]
+}
