@@ -9,17 +9,18 @@ export default class Controller {
 
         this.model = new Model;
         this.header = new Header;
-        this.content = new Content(this.model.arrCars);
-        this.footer = new Footer;
+        this.content = new Content(this.model.arrCars, this.model.contacts);
+        this.footer = new Footer(this.model.contacts);
         
 
-        this.header.findCars = (clas) => this.model.filterElementsByClass(clas);
-        this.header.changeState = (clas, rent, trans) => this.model.changeState(clas, rent, trans);
+        this.header.filterCars = (clas) => this.model.filterElementsByClass(clas);
         this.header.rebuildCarsList = (sClass) => this.content.renderElement(sClass);
-        
+        this.header.createButton = () => this.content.createButton();
+
         this.content.findCar = (name) => this.model.findElement(name);
-        // this.content.findCar = (clas,color) => this.model.findElement(clas,color);
-        this.content.changeState = (rent, trans) => this.model.changeState(rent, trans);
+        this.content.getContacts = () => this.model.getContacts();
+        this.content.findMin = (obj) => this.model.findMin(obj);
+
         this.footer.showRentCarsList = (e) => this.header.showRentCarsList(e);
         this.footer.pageAnimate = (e) => this.header.pageAnimate(e);
     }

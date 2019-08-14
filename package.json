@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --open --hot --mode development",
-    "build": "webpack --mode production" 
+    "build": "webpack --mode production"
   },
   "browserslist": [
     "> 1%",

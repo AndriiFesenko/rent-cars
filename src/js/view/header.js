@@ -7,61 +7,49 @@ export class Header {
         this.$transfersButton = $('#transfers')
         this.$rentCarsList = $('.rentCarsList');
         this.$transfersCarsList = $('.transfersCarsList');
+        this.$mainSiteInfoList = $('.mainSiteInfoList');
         this.$carsMenu = $('#cars-menu');
         this.$page = $('html, body');
-        
+        this.$header = $('header');
 
-        this.$carsMenu.mouseover((e) => this.init(e))
-        this.$rentCarsButton.parent().mouseleave(() => this.hideMenu(this.$rentCarsList))
-        this.$transfersButton.parent().mouseleave(() => this.hideMenu(this.$transfersCarsList))
+        this.$header.mouseover((e) => this.slideMenu(e))
 
-        this.$rentCarsList.on('click', (e, rent=true, trans=false) => this.showRentCarsList(e, rent=true, trans=false));
-        this.$transfersCarsList.on('click', (e, rent=false, trans=true) => this.showRentCarsList(e, rent=false, trans=true))
+        this.$rentCarsButton.parent().mouseleave(() => this.hideMenu(this.$rentCarsList));
+        this.$transfersButton.parent().mouseleave(() => this.hideMenu(this.$transfersCarsList));
+        this.$mainSiteInfoList.parent().mouseleave(() => this.hideMenu(this.$mainSiteInfoList));
+
+        this.$rentCarsList.on('click', (e) => this.showRentCarsList(e));
+        this.$transfersCarsList.on('click', (e) => this.showRentCarsList(e));
         $('.top-side').click((e) => this.pageAnimate(e))
     }
     
-    init(e) {
+    slideMenu(e) {
         if(e.target.id === 'rentCars'){
-            this.hideMenu(this.$transfersCarsList)
+            this.hideMenu(this.$transfersCarsList);
+            this.hideMenu(this.$mainSiteInfoList);
             this.showMenu(this.$rentCarsList);
         } else if (e.target.id === 'transfers'){
-            this.hideMenu(this.$rentCarsList)
+            this.hideMenu(this.$rentCarsList);
+            this.hideMenu(this.$mainSiteInfoList);
             this.showMenu(this.$transfersCarsList);
+        } else if (e.target.id === 'mainSiteInfo') {
+            this.hideMenu(this.$transfersCarsList);
+            this.hideMenu(this.$rentCarsList);
+            this.showMenu(this.$mainSiteInfoList);
         }
     }
-    showRentCarsList(e, rent, trans) {
-
-        if($(e.target).html() === 'S-Class'){
-
-            let sClass = this.findCars('S');
-            this.changeState(rent, trans);
-            this.rebuildCarsList(sClass);
-
-        } else if ($(e.target).html() === 'E-Class') {
-
-            let eClass = this.findCars('E');
-            this.changeState(rent, trans);
-            this.rebuildCarsList(eClass);
-
-        } else if ($(e.target).html() === 'ML-Class') {
-
-            let mlClass = this.findCars('ML');
-            this.changeState(rent, trans);
-            this.rebuildCarsList(mlClass);
-
-        } else if ($(e.target).html() === 'G-Class') {
-
-            let gClass = this.findCars('G');
-            this.changeState(rent, trans);
-            this.rebuildCarsList(gClass);
-
-        } 
+    showRentCarsList(e) {
+        let carClickedClass = $(e.target).html();
+        let newCarsArrByClass = this.filterCars(carClickedClass);
+        this.rebuildCarsList(newCarsArrByClass);
+        this.createButton();
     }
     showMenu(element){
             $(element).slideDown(600);
     }
     hideMenu(element){
-          $(element).css('display', 'none');
+        $(element).slideUp(0);
+        $(element).css('display', 'none');
     }
     pageAnimate(e) {
         if($(e.target).attr('href') === '#wrapper') {
@@ -72,7 +60,7 @@ export class Header {
     }
     callPageAnimation(way){
         this.$page.animate({
-            // offset().top-20. Берем тег main, его координаты top -20(px)
+            // offset().top-20. takes tag main, its coordinates top -20(px)
             scrollTop: $(way).offset().top-20
         }, 700);
         return false

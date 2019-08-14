@@ -1,7 +1,7 @@
 
 @import './fonts.scss';
 
-$mainColor: rgb(219, 29, 29);
+$mainColor: rgb(221, 28, 28);
 
 .container {
     height: 800px;
@@ -28,7 +28,6 @@ header {
         align-items: center;
         a {
             text-decoration: none;
-            // margin-left: 20px;
         }
         img:first-of-type {
             height: 70px;
@@ -43,11 +42,11 @@ header {
             margin: 0px 100px 0px 0px;
             >li {
                 position: relative;
-                margin: 0px 40px;
+                margin: 2px 0px;
                 list-style: none;
                 display: flex;
                 flex-direction: column;
-                >ul.rentCarsList, >ul.transfersCarsList {
+                >ul.rentCarsList, >ul.transfersCarsList, >ul.mainSiteInfoList {
                     position: absolute;
                     top: 36px;
                     right: 0px;
@@ -65,12 +64,12 @@ header {
                         a {
                             display: block;
                             height: auto;
-                            min-width: 80px;
+                            width: auto;
                             font-family: "ProximaLight";
-                            text-align: start;
                             font-size: 20px;
                             padding: 10px 100px 10px 30px;
-                            color: white;
+                            color: #fff;
+                            white-space: nowrap;
                         }
                     }
                 }
@@ -81,7 +80,7 @@ header {
                 font-family: "ProximaLight";
                 font-size: 20px;
                 max-width: 120px;
-                padding: 2px 10px;
+                padding: 2px 15px;
                }
                &:hover {
                    cursor: pointer;
@@ -100,6 +99,12 @@ header {
                         background-color: $mainColor;
                     }
                }
+            }
+            // Доработать раздел инфо 
+            .mainSiteInfoList {
+                a {
+                    padding: 10px 10px 
+                }
             }
         }
     }
@@ -138,79 +143,78 @@ main {
         width: 30%;
         input {
             margin: 0px ;
-            border: none;
-            color: white;
-            background-color: $mainColor;
+            border: 1px solid black;
+            color: black;
             &:hover {
-                color: black;
+                color: white;
+                background-color: black;
             }
         }
     }
     .wrapper {
-        // width: 100%;
-        // min-height: 500px;
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
-        // padding: 0px 200px;
-
-        width: 72%;
+        width: 80%;
         min-height: 500px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        // justify-content: flex-start;
+        justify-content: space-around;
         box-sizing: border-box;
         .block {
-            // width: 60%;
-            // display: flex;
-            // justify-content: space-between;
-            // margin: 0px 0px;
-            // padding: 20px 40px;
             width: auto;
             max-height: 400px;
-            padding: 20px 0px;
-            box-sizing: border-box;
-            margin: 10px 10px;
-            // &:nth-child(even) {
-            //     flex-direction: row-reverse;
-            // }
+            padding: 20px 0;
+            margin: 10px 0px;
             &:hover {
                 box-shadow: 0px 0px 10px 3px #d8d4d4;
                 cursor: pointer;
             }
             .info{
-                // width: 65%;
+                display: flex;
+                flex-direction: column;
+                height: 40%;
                 padding: 0px 20px;
                 box-sizing: border-box;
                 h2 {
                     font-family: "ProximaBold";
                     font-size: 18px;
                 }
-                p {
-                    font-family: "ProximaRegular";
-                    margin: 0px;
-                }
-                h3 {
-                    font-family: "ProximaBold";
-                    font-size: 18px;
-                    letter-spacing: 1px;
+                .pricelist {
                     display: flex;
-                    align-items: center;
-                    
-                    img {
-                        width: 30px;
-                        height: 30px;
+                    width: 100%;
+                    div {
+                        width: 33%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        font-family: "ProximaBold";
+                        font-size: 17px;
+                        letter-spacing: 0.3px;
+                        p {
+                            font-family: "ProximaRegular";
+                            margin: 0px;
+                            font-size: 15px;
+                            letter-spacing: normal;
+                        }
+                        span {
+                            position: relative;
+                            img {
+                                position: absolute;
+                                left: -15px;
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
                     }
                     input {
-                        margin-left: 20px;
-                        margin-bottom: 0px;
+                        margin: 0px;
                         border: 1px solid black;
                         color: black;
                         font-family: "ProximaRegular";
                         font-size: 12px;
                         box-sizing: border-box;
                         padding: 0px 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         &:hover {
                             background-color: $mainColor;
                             border: 1px solid $mainColor;
@@ -220,10 +224,11 @@ main {
                 }
             }
             .image-box{
-                // height: 100%;
-                // width: 35%;
                 padding: 0px 20px;
                 box-sizing: border-box;
+                height: 60%;
+                margin-bottom: 20px;
+                position: relative;
                 img{
                     height: 200px;
                     width: 300px;
@@ -353,6 +358,8 @@ footer {
     left: 0px;
     position: fixed;
     background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
     .ui-dialog {
         background-color: white !important;
         height: 80% !important;
@@ -360,8 +367,8 @@ footer {
         padding: 20px 40px !important;
         box-sizing: border-box;
         border-radius: 5px;
+        overflow: hidden;
         .ui-dialog-titlebar {
-            height: 10%;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -447,14 +454,16 @@ footer {
             .dialog-info {
                 width: 50%;
                 height: auto;
+                padding: 0px 15px;
+                box-sizing: border-box;
                 div {
                     display: flex;
                     align-items: center;
-                    margin: 20px 0px;
+                    margin: 15px 0px;
                     hr {
                         flex-grow: 8;
                         background-color: $mainColor;
-                        height: 1px;
+                        height: 1.4px;
                         // width: 50%;
                         margin: 0px 10px;
 
@@ -469,15 +478,17 @@ footer {
                 .title {
                     display: flex;
                     justify-content: space-between;
+                    align-items: center;
                     img {
-                        height: 25px;
-                        width: 25px;
+                        height: 35px;
+                        width: 35px;
                         margin-right: 10px;
                     }
                     h3 {
                         margin: 0px;
                         font-size: 30px;
                         font-family: "ProximaBold";
+                        display: flex;
                     }
                     h4 {
                         margin: 0px;
@@ -485,9 +496,71 @@ footer {
                         font-family: "ProximaBold";
                     }
                 }
+                .specifications {
+                    span {
+                        margin: 0px 10px;
+                        font-family: "ProximaBold";
+                        i {
+                            font-style: normal;
+                            font-family: "ProximaRegular";
+                        }
+                    }
+                }
             }
             
         }
+    }
+    .makeAnOrderPopup {
+        height: 40% !important;
+        width: 40% !important;
+        padding: 10px 20px !important;
+        box-sizing: border-box;
+        border-radius: 5px;
+        .ui-dialog-titlebar {
+            height: 30% !important;
+            span {
+                font-family: "ProximaRegular";
+            }
+        }
+        #dialog {
+            height: 70% !important;
+            display: flex;
+            flex-direction: column;
+        }
+        .contacts {
+            h3 {
+                font-size: 25px;
+                font-family: "ProximaBold";
+                margin: 0px;
+            }
+            p {
+                margin: 0px;
+                font-size: 20px;
+                font-family: "ProximaRegular";
+            }
+            >div {
+                display: flex;
+                align-items: center;
+                font-size: 20px;
+                font-family: "ProximaRegular";
+                a {
+                    font-size: 25px;
+                    font-family: "ProximaBold";
+                    text-decoration: none;
+                    color: black;
+                    margin-left: 5px;
+                }
+            }
+            a {
+                text-decoration: none;
+                img {
+                    height: 40px;
+                    width: 40px;
+                    margin: 10px 5px;
+                }
+            }
+        }
+        
     }
     .ui-dialog-buttonset {
         display: none;
