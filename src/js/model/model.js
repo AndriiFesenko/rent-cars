@@ -1,4 +1,5 @@
 
+'use strict'
 
 export class Model {
     constructor() {
@@ -28,7 +29,7 @@ export class Model {
                     childrenSit: 200
                 },
                 src: './src/images/222white.jpg',
-                class: 'представительский',
+                class: 'executive',
                 img: {
                     main: './src/images/w222white/main.jpg',
                     first: './src/images/w222white/1.jpg',
@@ -64,7 +65,7 @@ export class Model {
                     childrenSit: 200
                 },
                 src: './src/images/212white.png',
-                class: 'бизнес',
+                class: 'business',
                 img: {
                     main: './src/images/e212white/main.jpg',
                     first: './src/images/e212white/1.jpg',
@@ -100,7 +101,7 @@ export class Model {
                     childrenSit: 200
                 },
                 src: './src/images/222black.jpg',
-                class: 'представительский',
+                class: 'executive',
                 img: {
                     main: './src/images/w222black/main.jpg',
                     first: './src/images/w222black/1.jpg',
@@ -136,7 +137,7 @@ export class Model {
                     childrenSit: 200
                 },
                 src: './src/images/212black.png',
-                class: 'бизнес',
+                class: 'business',
                 img: {
                     main: './src/images/e212black/main.jpg',
                     first: './src/images/e212black/1.jpg',
@@ -172,7 +173,7 @@ export class Model {
                     childrenSit: 200
                 },
                 src: './src/images/mercedes-ml.png',
-                class: 'внедорожники',
+                class: 'off-road',
                 img: {
                     main: './src/images/mlblack/main.jpg',
                     first: './src/images/mlblack/1.jpg',
@@ -208,7 +209,7 @@ export class Model {
                     childrenSit: 200
                 },
                 src: './src/images/mercedes-g.png',
-                class: 'внедорожники',
+                class: 'off-road',
                 img: {
                     main: './src/images/Gblack/main.jpg',
                     first: './src/images/Gblack/1.jpg',
@@ -244,7 +245,7 @@ export class Model {
                 },
                 color: 'Maybach',
                 src: './src/images/maybach.png',
-                class: 'премиум',
+                class: 'premium',
                 img: {
                     main: './src/images/maybach/main.jpg',
                     first: './src/images/maybach/1.jpg',
@@ -280,7 +281,7 @@ export class Model {
                     childrenSit: 200
                 },
                 src: './src/images/221black.png',
-                class: 'представительский',
+                class: 'executive',
                 img: {
                     main: './src/images/w221black/main.jpg',
                     first: './src/images/w221black/1.jpg',
@@ -311,11 +312,7 @@ export class Model {
         return this.arrCars.filter((current) => current.class === clas);
     }
     findElement(name) {
-        return this.arrCars.find((current) => {
-            if(current.name === name){
-                return current;
-            }
-        })
+        return this.arrCars.find((current) => current.name === name);
     }
     // changeState(rent, trans) {
     //     this.arrCars.forEach((current) => {

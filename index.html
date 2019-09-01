@@ -13,33 +13,59 @@
 <body>
     <div class="container">
         <header>
-            <img src="./src/images/2018-mercedes-s-class-facelift.jpg" alt="header-bg-img">
+            <div class="background-container">
+                <div class="bg-wrapper active">
+                    <div class="info">
+                        <hr>
+                        <h2>Трансфер - это всегда комфорт и уверенность </h2>
+                        <a href="#wrapper">Подробнее...</a>
+                    </div>
+                    <img src="./src/images/leftSlider.png" alt="leftSlider" class="left-slider">
+                    <img src="./src/images/bg-transfer(2).jpg" alt="bg-transfer" class="bg">
+                    <img src="./src/images/rightSlider.png" alt="rightSlider" class="right-slider">
+                </div>
+                <div class="bg-wrapper notActive">
+                    <div class="info">
+                        <hr>
+                        <h2>Для клиентов, которые делают ставку на повышенный уровень респектабельности и комфорта, компания "LimoPullman" предоставляет услугу элитное такси</h2>
+                        <a href="#wrapper">Подробнее...</a>
+                    </div>
+                    <img src="./src/images/leftSlider.png" alt="leftSlider" class="left-slider">
+                    <img src="./src/images/bg-vip-taxi.jpg" alt="bg-vip-taxi" class="bg">
+                    <img src="./src/images/rightSlider.png" alt="rightSlider" class="right-slider">
+                </div>
+                <div class="bg-wrapper notActive">
+                    <div class="info">
+                        <hr>
+                        <h2>Свадебный кортеж - неотъемлемый элемент церемонии бракосочетания.</h2>
+                        <a href="#wrapper">Подробнее...</a>
+                    </div>
+                    <img src="./src/images/leftSlider.png" alt="leftSlider" class="left-slider">
+                    <img src="./src/images/bg-wedding.jpg" alt="bg-wedding" class="bg"> 
+                    <img src="./src/images/rightSlider.png" alt="rightSlider" class="right-slider">
+                </div>
+            </div>
             <div class="top-side">
                 <div>
                     <a href="#">
                         <img src="./src/images/logo.png" alt="mercedesSign.png">
-                        <!-- <img src="./src/images/amg-noel.jpg" alt="amg-noel.jpg"> -->
                     </a>
                 </div>
                 <ul id="cars-menu">
-                    <li><a href="#">Главная</a></li>
                     <li>
                         <a href="#" id="rentCars">Аренда авто</a>
                         <ul class="rentCarsList">
                             <li>
-                                <a href="#wrapper" title="Нажмите для просмотра">представительский</a>
+                                <a href="#wrapper" title="Нажмите для просмотра" class="executive">Представительский</a>
                             </li>
                             <li>
-                                <a href="#wrapper" title="Нажмите для просмотра">бизнес</a>
+                                <a href="#wrapper" title="Нажмите для просмотра" class="business">Бизнес</a>
                             </li>
                             <li>
-                                <a href="#wrapper" title="Нажмите для просмотра">внедорожники</a>
+                                <a href="#wrapper" title="Нажмите для просмотра" class="off-road">Внедорожники</a>
                             </li>
-                            <!-- <li>
-                                <a href="#wrapper" title="Нажмите для просмотра">G-Class</a>
-                            </li> -->
                             <li>
-                                <a href="#wrapper" title="Нажмите для просмотра">премиум</a>
+                                <a href="#wrapper" title="Нажмите для просмотра" class="premium">Премиум</a>
                             </li>
                         </ul>
                     </li>
@@ -47,59 +73,74 @@
                         <a href="#" id="transfers">Трансферы</a>
                         <ul class="transfersCarsList">
                             <li>
-                                <a href="#wrapper" title="Нажмите для просмотра">представительский</a>
+                                <a href="#wrapper" title="Нажмите для просмотра" class="executive">Представительский</a>
                             </li>
                             <li>
-                                <a href="#wrapper" title="Нажмите для просмотра">бизнес</a>
+                                <a href="#wrapper" title="Нажмите для просмотра" class="business">Бизнес</a>
                             </li>
                             <li>
-                                <a href="#wrapper" title="Нажмите для просмотра">внедорожники</a>
+                                <a href="#wrapper" title="Нажмите для просмотра" class="off-road">Внедорожники</a>
                             </li>
-                            <!-- <li>
-                                <a href="#wrapper" title="Нажмите для просмотра">G-Class</a>
-                            </li> -->
                             <li>
-                                <a href="#wrapper" title="Нажмите для просмотра">премиум</a>
+                                <a href="#wrapper" title="Нажмите для просмотра" class="premium">Премиум</a>
                             </li>
                         </ul>
                     </li>
                     <li>
+                            <a href="#" id="wedding">Свадьба</a>
+                            <ul class="weddingCarsList">
+                                <li>
+                                    <a href="#wrapper" title="Нажмите для просмотра" class="executive">Представительский</a>
+                                </li>
+                                <li>
+                                    <a href="#wrapper" title="Нажмите для просмотра" class="business">Бизнес</a>
+                                </li>
+                                <li>
+                                    <a href="#wrapper" title="Нажмите для просмотра" class="off-road">Внедорожники</a>
+                                </li>
+                                <li>
+                                    <a href="#wrapper" title="Нажмите для просмотра" class="premium">Премиум</a>
+                                </li>
+                            </ul>
+                        </li>
+                    <li>
                         <a href="#" id="mainSiteInfo">Информация</a>
                         <ul class="mainSiteInfoList">
                             <li>
-                                <a href="#" title="Нажмите для просмотра">Как оформить заказ</a>
+                                <a href="#" title="Нажмите для просмотра" class="conditions">Условия</a>
                             </li>
                             <li>
-                                <a href="#" title="Нажмите для просмотра">Условия</a>
+                                <a href="#" title="Нажмите для просмотра" class="payments-method">Способы оплаты</a>
                             </li>
                             <li>
-                                <a href="#" title="Нажмите для просмотра">Способы оплаты</a>
+                                <a href="#" title="Нажмите для просмотра" class="transfer-conditions">Условия трансфера</a>
                             </li>
                             <li>
-                                <a href="#" title="Нажмите для просмотра">Скидки</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Нажмите для просмотра">Что входит в трансфер</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Нажмите для просмотра">Советы</a>
+                                <a href="#" title="Нажмите для просмотра" class="">Советы</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="#">О нас</a></li>
+                    <li><a href="#place-for-info" class="about-company">О нас</a></li>
                     <li><a href="#footer">Контакты</a></li>
                 </ul>
+                <div id="open-menu-button">
+                    <img src="./src/images/3-lines-icon.png" class="open-menu-btn">
+                </div>
             </div>
-            <div class="center-side">
-
-            </div>
+            <!-- <div class="communication">
+                <div>
+                    <img src="./src/images/phoneIcon.png" alt="phone">
+                    <a href="tel: +380991173869">+380991173869</a>
+                </div>
+                <div>
+                    <img src="./src/images/social.png" alt="social">
+                    <a href="https://api.whatsapp.com/send?phone=380991173869" target="_blank"><img src="./src/images/whatsApp.png" alt="whatsApp"></a>
+                    <a href="viber://add?number=380991173869" target="_blank"><img src="./src/images/viber.png" alt="viber"></a>
+                </div>
+            </div> -->
         </header>
         <main>
             <div class="label">car park</div>
-            <!-- <div class="main-menu-buttons">
-                <input type="button" id="showRentCars" value="Аренда авто">
-                <input type="button" id="showTransfersCars" value="Трансферы">
-            </div> -->
             <hr>
             <div class="carParkTitle"></div>
             <div class="wrapper" id="wrapper"></div>
@@ -142,46 +183,54 @@
                 </div>
             </div>
         </article>
-        <footer id="footer">
-            <div class="aboutUs">
-                <div class="title">О нас</div>
-                <a href="#">Контакты</a>
-                <a href="#">О компании</a>
-                <a href="#">Отзывы</a>
-            </div>
-            <div class="weOffer">
-                <div class="title">Услуги</div>
-                <a href="#">Авто на свадьбу</a>
-                <a href="#">Междугородние перевозки</a>
-                <a href="#">Трансферы</a>
-                <a href="#">VIP такси</a>
-                <a href="#">Транспортное обслуживание</a>
-                <a href="#">Бизнес-такси</a>
-            </div>
+        <aside id="place-for-info">
+            <img src="./src/images/logo(2).png" alt="logo(2)">
             <div class="information">
+                <a href="#aside" class="conditions">Условия</a>
+                <a href="#aside"  class="payments-method">Способы оплаты</a>
+                <a href="#aside" class="transfer-conditions">Что входит в трансфер</a>
+                <a href="#aside" class="about-company">О компании</a>
+                <div class="close-button">
+                    <a href="#footer">
+                        <img src="./src/images/cross-icon.png" alt="cross-icon" class="close-button">
+                    </a>
+                </div>
+            </div>
+            <div class="info-container"></div>
+        </aside>
+        <footer id="footer">
+            <div class="aboutUs-block">
+                <div class="title">О нас</div>
+                <a href="#footer" class="isDisabled">Контакты</a>
+                <a href="#footer" class="about-company">О компании</a>
+            </div>
+            <div class="weOffer-block">
+                <div class="title">Услуги</div>
+                <a href="#wrapper">Авто на свадьбу</a>
+                <a href="#wrapper">Междугородние перевозки</a>
+                <a href="#wrapper">Трансферы</a>
+                <a href="#wrapper">VIP такси</a>
+            </div>
+            <div class="information-block">
                 <div class="title">Информация</div>
-                <a href="#">Как оформить заказ</a>
-                <a href="#">Условия</a>
-                <a href="#">Способы оплаты</a>
-                <a href="#">Скидки</a>
-                <a href="#">Что входит в трансфер</a>
-                <a href="#">Советы</a>
+                <a href="#aside" class="conditions">Условия</a>
+                <a href="#aside"  class="payments-method">Способы оплаты</a>
+                <a href="#aside" class="transfer-conditions">Что входит в трансфер</a>
             </div>
-            <div class="ourPark">
+            <div class="ourPark-block">
                 <div class="title">Автопарк</div>
-                <a href="#wrapper">представительский</a>
-                <a href="#wrapper">бизнес</a>
-                <a href="#wrapper">внедорожники</a>
-                <!-- <a href="#wrapper">G-Class</a> -->
-                <a href="#wrapper">премиум</a>
+                <a href="#wrapper" class="executive">Представительский</a>
+                <a href="#wrapper" class="business">Бизнес</a>
+                <a href="#wrapper" class="off-road">Внедорожники</a>
+                <a href="#wrapper" class="premium">Премиум</a>
             </div>
-            <div class="contacts">
+            <div class="contacts-block">
                 <div>
                     <img src="./src/images/pin.jpg" alt="pin.jpg">
                     <p>Работаем по всей Украине</p>
                 </div>
                 <div class="tel">
-                        <!-- tel: +380985168071 -->
+                        <!-- tel: +380991173869 -->
                     <a href="" title="phone"></a>
                     <p><img src="./src/images/phone.png" alt="">  Круглосуточно</p>
                 </div>

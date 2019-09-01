@@ -1,4 +1,4 @@
-
+'use strict'
 export class Content {
     constructor(arrCars, contacts) {
         this.arrCars = arrCars;
@@ -9,14 +9,25 @@ export class Content {
         this.showCars();
 
         this.wrapper.addEventListener('click', (e) => this.onCarClick(e));
-        this.mainMenuButtons.addEventListener('click', () => this.showAllCars());
+        this.mainMenuButtons.addEventListener('click', () => this.onMainMenuBtnClick());
+
+        $(this.wrapper).on('mouseenter', '.block', (e) => this.onBlockHover(e));
+        $(this.wrapper).on('mouseleave', '.block', (e) => this.onBlockHover(e));
+
         $(this.dialogWrapper).on('click','.ui-button', (e) => this.closePopup(e));
         $(this.dialogWrapper).on('click', '.dialog-img-wrapper > div > img', (e) => this.changeMainImg(e));
         $(this.wrapper).on('click', '#makeAnOrder', (e) => this.onMakeAnOrderClick(e));
-        $('body').keyup(() => this.closePopup());
+        $('body').on('keyup', (e) => this.onKeyUpEvent(e));
     }
     showCars() {
         this.renderElement(this.arrCars);
+    }
+    onBlockHover(e) {
+        let showMoreInfo = $(e.target).closest('.block').find('.image-box .show-more-info');
+        showMoreInfo.css('display') === 'none' ? 
+                                    showMoreInfo.css({display: 'flex'})
+                                    : showMoreInfo.css({display: 'none'});
+        
     }
     renderElement(element) {
         this.wrapper.innerHTML = element.map((current) => {
@@ -24,36 +35,43 @@ export class Content {
         }).join('');
     }
     onCarClick(e) {
-        let $target = $(e.target)
+        let $target = $(e.target);
         // check if our click was not on "make an order" button
         if($target.attr('id') != 'makeAnOrder' && $target.attr('class') != 'wrapper') {
             // check on what car was click
-            let carName = $target.closest('.block').find('.info').find('h2').text();
-            let element = this.findCar(carName);
+            let $carName = this.takeCarName(e);
+            let element = this.findCar($carName);
             let content = this.dialogTemplate(element);
             this.showPopup("drop");
             this.setDialogContent(content, element.name);
         }
     }
+    takeCarName(e) {
+        return $(e.target).closest('.block').find('.info').find('h2').text();
+    }
     onMakeAnOrderClick(e) {
-        let $parent = $(e.target).closest('.block');
         // take name of car where user has clicked
-        let carName = $parent.find('.info').find('h2').text();
+        let $carName = this.takeCarName(e);
         // set title 
         let title = 'Вы хотите заказать :';
         //set content
-        let content = this.makeAnOrderTemplate(carName);
+        let content = this.makeAnOrderTemplate($carName);
         this.showPopup();
-        // changing height and width of popup
+        // changing height and width of popup by added new class
         $('.ui-dialog').addClass('makeAnOrderPopup');
         this.setDialogContent(content, title);
     }
     
     showPopup(type) {
         this.setSettingsToPopup(type);
+        // replace popup window to our container 
+        this.replaceDialogWindow();
+        // this.makeNewCloseButton();
+        $('#dialog').dialog('open');
+    }
+    replaceDialogWindow() {
         let uiDialog = document.querySelector('.ui-dialog');
         this.dialogWrapper.appendChild(uiDialog);
-        $('#dialog').dialog('open');
     }
     setDialogContent(content, title) {
         let dialogContent = document.getElementById('dialog');
@@ -71,7 +89,6 @@ export class Content {
         $('#dialog').dialog({
             draggable: false,
             autoOpen: false,
-            closeOnEscape: false,
             buttons: [
                 {
                     click: () => {
@@ -89,6 +106,9 @@ export class Content {
             }
           });
     }
+    onKeyUpEvent(e) {
+        e.which == 27 && this.closePopup();
+    }
     closePopup() {
         // hide popup background 
         $(this.dialogWrapper).css({
@@ -105,6 +125,9 @@ export class Content {
         // set active class to clicked image
         this.setActiveClass(e);
         // change main image on clicked image
+        this.replaceMainImg(e);
+    }
+    replaceMainImg(e) {
         let $mainImg = $('.main-place-img').find('img');
         let $activeImgSrc = $(e.target).attr('src');
         $mainImg.attr('src', $activeImgSrc);
@@ -122,8 +145,12 @@ export class Content {
             e.target.className = 'active'
         }
     }
-    showAllCars() {
+    onMainMenuBtnClick() {
         this.showCars();
+        // remove show all cars button
+        this.removeShowAllCarsButton();
+    }
+    removeShowAllCarsButton() {
         let input = this.mainMenuButtons.querySelector('input');
         this.mainMenuButtons.removeChild(input);
     }
@@ -132,6 +159,10 @@ export class Content {
         return    `<div class="block" title="нажмите для более подробной информации">
                     <div class="image-box">
                         <img src="${current.src}">
+                        <div class="show-more-info">
+                            <img src="./src/images/magnifying-glass.png" alt="magnifying-glass">
+                            <h3>Подробнее...</h3>
+                        </div>
                     </div>
                     <div class="info">
                         <h2>${current.name}</h2>
@@ -235,7 +266,7 @@ export class Content {
                     <span> год: <i>${current.specifications.year}</i></span>
                     <span> пассажиры: <i>${current.specifications.passangers} чел.</i></span>
                     <span> багаж: <i>${current.specifications.trunk} места</i></span>
-                    <span> детское кресло: <i>${current.specifications.childrenSit} ₴</i></span>
+                    <span> дет. кресло: <i>${current.specifications.childrenSit} ₴</i></span>
                 </div>`
     }
     makeAnOrderTemplate(name) {
@@ -255,7 +286,7 @@ export class Content {
                 </div>`
     }
     createButton() {
-        // creating button to show all cars menu
+        // creating button "show all cars"
         this.mainMenuButtons.innerHTML = `<input type="button" id="showRentCars" value="показать все авто">`;
     }
 }

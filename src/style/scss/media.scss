@@ -1,0 +1,235 @@
+
+// $extraLargeWidth: 1
+$laptopLargeWidth: 1200px;
+$largeWidth: 1024px;
+$middleWidth: 900px;
+$smallWidth: 768px;
+$extraSmallWidth: 600px;
+$mobileWidth: 480px;
+$smallMobileWidth: 320px;
+
+// 900 - 768
+
+
+
+@media only screen and (max-width: 1367px) and (max-height: 1025px) and (orientation: landscape) {
+    header {
+        height: 80vh;
+    }
+    header .top-side {
+        height: 15%;
+    }
+    header .top-side ul#cars-menu {
+        margin: 0px 50px 0px 0px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        max-width: 45%;
+        top: 150px;
+    }
+    header>.background-container>.bg-wrapper.active .info h2 {
+        font-size: 30px;
+        margin: 0 0 25px;
+    }
+    .dialog-wrapper .ui-dialog {
+        height: 65%!important;
+        width: 85%!important;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        height: 35%!important;
+        width: 45%!important;
+        padding: 20px 30px!important;
+    }
+}
+                        // 1024px
+@media only screen and (max-width: $largeWidth ) and (orientation : portrait) {
+    header {
+        height: 50vh;
+    }
+    header .background-container .bg-wrapper.active .info {
+        padding: 20px 10px;
+        top: 150px;
+        max-width: 50%;
+    }
+    header>.background-container>.bg-wrapper.active .info hr {
+        margin: 0 0 10px;
+    }
+    header>.background-container>.bg-wrapper.active .info h2 {
+        font-size: 25px;
+        margin: 0 0 15px;
+    }
+    header .top-side ul#cars-menu {
+        margin: 0 25px 0 0;
+        height: 10px;
+    }
+    article .description {
+        width: 90%;
+    }
+    article .description div {
+        width: 209px;
+    }
+    aside {
+        padding: 20px 50px;
+    }
+    aside .info-container {
+        padding: 30px 100px 0px 100px;
+    }
+    footer {
+        padding: 30px 30px;
+    }
+    .dialog-wrapper .ui-dialog {
+        padding: 20px 25px!important;
+        height: 45%!important;
+        width: 95%!important;
+    }
+    .dialog-wrapper .ui-dialog #dialog {
+        align-items: center;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container {
+        height: 90%;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div {
+        margin: 5px 0;
+    }
+    .dialog-wrapper .makeAnOrderPopup .ui-dialog-titlebar {
+        height: 20%!important;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3 {
+        font-size: 25px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
+        font-size: 25px;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        height: 20%!important;
+        width: 50%!important;
+    }
+}
+                                    // 1024px
+@media only screen and (max-width: $largeWidth) and (orientation: landscape) {
+    header>.background-container>.bg-wrapper.active .info {
+        max-width: 60%;
+        top: 130px;
+    }
+    header>.background-container>.bg-wrapper.active .info h2 {
+        font-size: 25px;
+        margin: 0 0 20px;
+    }
+    header .top-side ul#cars-menu {
+        margin: 0 0px 0 0;
+    }
+}
+                                    //900px
+@media only screen and (max-width: $middleWidth ) and (orientation : portrait){
+header {
+    height: 50vh;
+}
+header .top-side ul#cars-menu {
+    margin: 0 0px 0 0;
+    height: auto;
+}
+header .top-side ul#cars-menu>li>a {
+    padding: 2px 10px;
+}
+header>.background-container .left-slider {
+    left: 30px;
+}
+header>.background-container .right-slider {
+    right: 30px;
+}
+header .background-container .bg-wrapper.active .info {
+    top: 120px;
+    left: 70px;
+}
+article .description {
+    width: 90%;
+}
+footer {
+    padding: 30px 20px;
+}
+footer>div {
+    padding: 0px 10px;
+}
+
+.dialog-wrapper .ui-dialog {
+    height: 80%!important;
+    width: 95%!important;
+}
+.dialog-wrapper .makeAnOrderPopup {
+    height: 40%!important;
+    width: 50%!important;
+}
+.dialog-wrapper .makeAnOrderPopup .ui-dialog-titlebar {
+    height: 20%!important;
+}
+.dialog-wrapper .ui-dialog .ui-dialog-titlebar span {
+    font-size: 25px;
+}
+.dialog-wrapper .makeAnOrderPopup .contacts h3 {
+    font-size: 22px;
+}
+.dialog-wrapper .makeAnOrderPopup .contacts p {
+    font-size: 18px;
+}
+.dialog-wrapper .makeAnOrderPopup .contacts>div {
+    font-size: 18px;
+}
+.dialog-wrapper .makeAnOrderPopup .contacts>div a {
+    font-size: 20px;
+}
+}
+                                    // 768px
+@media only screen and (max-width: $smallWidth ) and (orientation : portrait) {
+    header>.background-container>.bg-wrapper.active .info {
+        top: 120px;
+        left: 90px;
+        max-width: 60%;
+        padding: 15px 10px;
+    }
+    header>.background-container>.bg-wrapper.active .info h2 {
+        font-size: 25px;
+        margin: 0 0 15px;
+    }
+    header .top-side ul#cars-menu {
+        margin: 0 0px 0 0;
+        height: 100vh;
+    }
+    .dialog-wrapper .ui-dialog {
+        height: 50%!important;
+        width: 95%!important;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        height: 35%!important;
+        width: 70%!important;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div {
+        margin: 5px 0;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div.specifications {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .specifications span {
+        margin: 0px 25px 0px 0px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3 {
+        font-size: 20px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
+        font-size: 20px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container {
+        width: 50%;
+        height: 85%;
+    }
+    
+}
+                        // 768px
+@media only screen and (max-width: $smallWidth) and (orientation: landscape) {
+    header {
+        height: 80vh;
+    }
+}
+  
+
+
+                        
