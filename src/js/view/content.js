@@ -6,13 +6,12 @@ export class Content {
         this.wrapper = document.getElementById('wrapper');
         this.mainMenuButtons = document.querySelector('.main-menu-buttons');
         this.dialogWrapper = document.querySelector('.dialog-wrapper');
+        this.body = document.querySelector('body');
+        this.html = document.querySelector('html');
         this.showCars();
 
         this.wrapper.addEventListener('click', (e) => this.onCarClick(e));
         this.mainMenuButtons.addEventListener('click', () => this.onMainMenuBtnClick());
-
-        $(this.wrapper).on('mouseenter', '.block', (e) => this.onBlockHover(e));
-        $(this.wrapper).on('mouseleave', '.block', (e) => this.onBlockHover(e));
 
         $(this.dialogWrapper).on('click','.ui-button', (e) => this.closePopup(e));
         $(this.dialogWrapper).on('click', '.dialog-img-wrapper > div > img', (e) => this.changeMainImg(e));
@@ -22,17 +21,13 @@ export class Content {
     showCars() {
         this.renderElement(this.arrCars);
     }
-    onBlockHover(e) {
-        let showMoreInfo = $(e.target).closest('.block').find('.image-box .show-more-info');
-        showMoreInfo.css('display') === 'none' ? 
-                                    showMoreInfo.css({display: 'flex'})
-                                    : showMoreInfo.css({display: 'none'});
-        
-    }
     renderElement(element) {
-        this.wrapper.innerHTML = element.map((current) => {
-                        return this.template(current) 
-        }).join('');
+        let templates = element.map((current) => this.template(current));
+        let html = templates.join('');
+        this.wrapper.innerHTML = html;
+        // this.wrapper.innerHTML = element.map((current) => {
+        //                 return this.template(current) 
+        // }).join('');
     }
     onCarClick(e) {
         let $target = $(e.target);
@@ -44,7 +39,14 @@ export class Content {
             let content = this.dialogTemplate(element);
             this.showPopup("drop");
             this.setDialogContent(content, element.name);
+            // hide scroll for body
+            this.changeScrollState();
         }
+    }
+    changeScrollState() {
+        this.body.classList.contains('noScrolling') ?
+            this.body.classList.remove('noScrolling') 
+            : this.body.classList.add('noScrolling')
     }
     takeCarName(e) {
         return $(e.target).closest('.block').find('.info').find('h2').text();
@@ -60,6 +62,8 @@ export class Content {
         // changing height and width of popup by added new class
         $('.ui-dialog').addClass('makeAnOrderPopup');
         this.setDialogContent(content, title);
+        // hide scroll for body
+        this.changeScrollState();
     }
     
     showPopup(type) {
@@ -107,7 +111,10 @@ export class Content {
           });
     }
     onKeyUpEvent(e) {
-        e.which == 27 && this.closePopup();
+        // check if our modal is open
+        this.dialogWrapper.style.display === 'flex' ?
+                e.which == 27 && this.closePopup()
+                : null;
     }
     closePopup() {
         // hide popup background 
@@ -117,7 +124,8 @@ export class Content {
         if($('.ui-dialog').hasClass('makeAnOrderPopup')) {
             $('.ui-dialog').removeClass('makeAnOrderPopup');
         }
-
+        // add possibility to scroll the page 
+        this.changeScrollState();
     }
     changeMainImg(e) {
         // set not active class to all images
@@ -171,12 +179,12 @@ export class Content {
                                 <p>Аренда :</p>
                                 <span>
                                     <img src="./src/images/priceIcon.png" alt="priceIcon">
-                                    от ${current.price} ₴/ч
+                                    от ${current.price}₴/ч
                                 </span>
                             </div>
                             <div>
                                 <p>Трансфер :</p>
-                                от ${Math.min(...Object.values(current.transferPrice))} ₴
+                                от ${Math.min(...Object.values(current.transferPrice))}₴
                             </div>
                             <div>
                                 <input type="button" id="makeAnOrder" value="Заказать">

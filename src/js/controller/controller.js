@@ -10,7 +10,7 @@ export default class Controller {
     constructor (){
 
         this.model = new Model;
-        this.header = new Header;
+        this.header = new Header(this.model.contacts);
         this.content = new Content(this.model.arrCars, this.model.contacts);
         this.footer = new Footer(this.model.contacts);
         this.aside = new Aside;
@@ -23,6 +23,7 @@ export default class Controller {
         this.header.transferConditions = () => this.aside.transferConditions();
         this.header.aboutCompanyTemplate = () => this.aside.aboutCompanyTemplate();
         this.header.setActiveClass = (e) => this.aside.setActiveClass(e);
+        // this.header.changeScrollState = () => this.content.changeScrollState();
 
         this.content.findCar = (name) => this.model.findElement(name);
         this.content.getContacts = () => this.model.getContacts();
@@ -31,6 +32,8 @@ export default class Controller {
         this.footer.showRentCarsList = (e) => this.header.showRentCarsList(e);
         this.footer.pageAnimate = (e) => this.header.pageAnimate(e);
         this.footer.showInfo = (e) => this.header.showInfo(e);
+        // this.footer.whatsAppSrc = this.model.whatsAppSrc;
+        this.footer.viberSrc = this.model.viberSrc;
 
         this.aside.showInfo = (e) => this.header.showInfo(e);
     }

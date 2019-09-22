@@ -15,8 +15,9 @@ export class Aside {
     setActiveClass(e) {
         // remove active class at all elements 
         this.removeClass(this.buttons)
-
+        // create array from buttons
         let array = Array.from(this.buttons);
+        // find button on which were click
         let element = this.findElementByClassName(e,array);
 
         //  check if we have element and after
@@ -63,18 +64,6 @@ export class Aside {
                     <h3>LimoPullman - надёжный партнёр в сфере транспортных услуг!</h3>
                 </div>`
     }
-    // carForWeddingTemplate() {
-
-    // }
-    // longDistanceTripTemplate() {
-
-    // }
-    // transferTemplate() {
-    //     // ---------------------
-    // }
-    // vipTaxiTemplate() {
-
-    // }
     // условия 
     conditionsTemplate() {
         return `<div>

@@ -5,16 +5,344 @@ $largeWidth: 1024px;
 $middleWidth: 900px;
 $smallWidth: 768px;
 $extraSmallWidth: 600px;
-$mobileWidth: 480px;
+$LargeMobileWidth: 480px;
+$mobileWidth: 415px;
+$middleMobileWidth: 376px;
 $smallMobileWidth: 320px;
 
-// 900 - 768
+@media (hover: hover) {
+    .wrapper .block {
+        &:hover {
+            box-shadow: 0px 0px 10px 3px #d8d4d4;
+            cursor: pointer;
+            .image-box {
+                .show-more-info {
+                    display: flex;
+                    position: absolute;
+                    top: 0px;
+                    left: 10px;
+                    right: 10px;
+                    bottom: 0px;
+                    background-color: rgba(0,0,0,0.3);
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
 
-
-
-@media only screen and (max-width: 1367px) and (max-height: 1025px) and (orientation: landscape) {
+                    img {
+                        height: 50px;
+                        width: 50px;
+                        margin: 10px 0px;
+                    }
+                    h3 {
+                        color: #fff;
+                        font-family: "ProximaBold";
+                        font-size: 30px;
+                        letter-spacing: 0.5px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 2304px) {
     header {
-        height: 80vh;
+        height: 90vh;
+    }
+    header .top-side {
+        height: 15%;
+    }
+    header .top-side>div a img {
+        height: 80px;
+        width: 180px;
+    }
+    header .top-side ul#cars-menu>li>a {
+        font-size: 40px;
+        max-width: 270px;
+        padding: 2px 25px;
+    }
+    header .top-side ul#cars-menu>li>ul {
+        top: 68px;
+        border-top: 10px solid #dd1c1c;
+    }
+    header .top-side ul#cars-menu>li>ul>li a {
+        font-size: 40px;
+        padding: 15px 150px 15px 50px;
+    }
+    header>.background-container>.bg-wrapper.active .info h2 {
+        font-size: 50px;
+        
+    }
+    header>.background-container .right-slider {
+        right: 100px;
+    }
+    header>.background-container .left-slider {
+        left: 100px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 220px;
+        left: 200px;
+        max-width: 1300px;
+        padding: 30px;
+    }
+    header>.background-container>.bg-wrapper.active .info hr {
+        height: 5px;
+    }
+    header>.background-container>.bg-wrapper.active .info a {
+        font-size: 30px;
+    }
+    header>.background-container .left-slider, header>.background-container .right-slider {
+        height: 60px;
+        width: 60px;
+    }
+    header .communication {
+        right: -310px;
+    }
+    header .communication div.active {
+        animation-name: showCommnElement;
+    }
+    @keyframes showCommnElement {
+        from{right: 0px}
+        to{right: 310px;}
+    }
+    header .communication div>img {
+        height: 45px;
+        width: 40px;
+        margin: 0px 20px 0px 5px;
+    }
+    header .communication div {
+        padding: 15px;
+        margin: 5px 0;
+    }
+    header .communication div a {
+        font-size: 35px;
+        margin: 0 10px;
+    }
+    header .communication div a img {
+        height: 60px;
+        width: 60px;
+    }
+    main hr {
+        height: 3px;
+        width: 75%;
+    }
+    main .carParkTitle {
+        font-size: 50px;
+    }
+    main>div.label {
+        left: -350px;
+        top: 400px;
+        font-size: 250px;
+    }
+    main .wrapper {
+        width: 85%;
+    }
+    main .wrapper .block {
+        max-height: 650px;
+    }
+    main .wrapper .block .info h2 {
+        font-size: 35px;
+    }
+    main .wrapper .block .image-box {
+        padding: 0px 20px;
+    }
+    main .wrapper .block .image-box img {
+        height: 360px;
+        width: 520px;
+    }
+    .wrapper .block:hover .image-box .show-more-info h3 {
+        font-size: 50px;
+    }
+    .wrapper .block:hover .image-box .show-more-info img {
+        height: 80px;
+        width: 100px;
+    }
+    main .wrapper .block .info .pricelist div p {
+        font-size: 30px;
+    }
+    main .wrapper .block .info .pricelist div {
+        width: 33%;
+        font-size: 30px;
+    }
+    main .wrapper .block .info .pricelist div span img {
+        width: 50px;
+        height: 50px;
+        left: -45px;
+    }
+    main .wrapper .block .info .pricelist input {
+        font-size: 25px;
+        height: 80%;
+        border-radius: 10px;
+    }
+    main .main-menu-buttons input {
+        font-size: 25px;
+        padding: 20px 45px;
+        border-radius: 10px;
+        height: auto;
+    }
+    article .description {
+        width: 60%;
+    }
+    article h2 {
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+    article .description div {
+        height: 280px;
+        width: 300px;
+        margin: 0px 20px;
+    }
+    article .description div .iconWrapper {
+        min-height: 50%;
+        width: 50%;
+    }
+    article .description div .iconWrapper img {
+        height: 50%;
+        width: 50%;
+    }
+    article .description div h3 {
+        font-size: 30px;
+    }
+    aside>img {
+        height: 600px;
+        width: 1000px;
+    }
+    aside>.information>a {
+        font-size: 35px;
+        padding: 10px 35px;
+    }
+    aside>.information .close-button img {
+        height: 60px;
+        width: 60px;
+    }
+    aside .info-container h3 {
+        font-size: 40px;
+    }
+    aside .info-container li, aside .info-container p {
+        font-size: 35px;
+    }
+    footer {
+        padding: 50px 100px;
+    }
+    footer>div .title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    footer>div a {
+        font-size: 30px;
+    }
+    footer .contacts-block {
+        padding: 0px 0px 0px 30px;
+    }
+    footer .contacts-block p {
+        font-size: 30px;
+    }
+    footer .contacts-block img {
+        height: 60px;
+        width: 60px;
+    }
+    footer .contacts-block .tel a {
+        font-size: 45px;
+    }
+    footer .contacts-block .tel p img {
+        width: 60px;
+        height: 50px;
+    }
+    footer .contacts-block>div.socialApps a {
+        margin: 0 20px 0 0;
+    }
+    .dialog-wrapper .ui-dialog {
+        height: 75%!important;
+        width: 85%!important;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar {
+        padding: 20px 0px;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar span {
+        font-size: 55px;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar button {
+        font-size: 25px;
+        padding: 20px 50px;
+        height: auto;
+        border-radius: 10px;
+        margin: 0px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container {
+        width: 55%;
+        height: 100%;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container .dialog-img-wrapper {
+        height: 18%;
+        padding: 20px 0;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info {
+        padding: 0 25px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3 {
+        font-size: 50px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title img {
+        height: 65px;
+        width: 65px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
+        font-size: 50px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div p {
+        font-size: 35px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div hr {
+        height: 3px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div {
+        // margin: 18px 0;
+        flex-wrap: wrap;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .specifications span {
+        margin-right: 10px;
+        font-size: 30px;
+        width: 40%;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        // height: 35%!important;
+        // width: 45%!important;
+        height: auto !important;
+        width: auto !important;
+        padding: 20px 30px!important;
+    }
+    .dialog-wrapper .makeAnOrderPopup .ui-dialog-titlebar {
+        height: 15%!important;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar button {
+        padding: 0px 50px;
+    }
+    .dialog-wrapper .makeAnOrderPopup #dialog {
+        height: 75% !important;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts h3 {
+        font-size: 45px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts p {
+        font-size: 40px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts>div {
+        font-size: 40px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts>div a {
+        font-size: 45px;
+        margin-left: 20px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts a img {
+        height: 70px;
+        width: 70px;
+        margin: 10px 10px;
+    }
+}
+// @media only screen and (min-width: )
+@media only screen and (min-width: 1365px) and (max-width: 1367px) and (max-height: 1025px) and (min-height: 1023px) and (orientation: landscape) {
+    header {
+        height: 85vh;
     }
     header .top-side {
         height: 15%;
@@ -34,202 +362,1406 @@ $smallMobileWidth: 320px;
         height: 65%!important;
         width: 85%!important;
     }
+    article .description {
+        width: 80%;
+    }
     .dialog-wrapper .makeAnOrderPopup {
-        height: 35%!important;
-        width: 45%!important;
+        // height: 35%!important;
+        // ....
+        height: auto !important;
+        width: auto !important;
         padding: 20px 30px!important;
     }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container {
+        height: 95%;
+        // margin-top: 15px;
+    }
 }
-                        // 1024px
-@media only screen and (max-width: $largeWidth ) and (orientation : portrait) {
-    header {
-        height: 50vh;
+
+@media only screen and (min-width: 1224px) {
+    header .top-side ul#cars-menu {
+        margin: 0 60px 0 0;
     }
-    header .background-container .bg-wrapper.active .info {
-        padding: 20px 10px;
-        top: 150px;
-        max-width: 50%;
-    }
-    header>.background-container>.bg-wrapper.active .info hr {
-        margin: 0 0 10px;
-    }
-    header>.background-container>.bg-wrapper.active .info h2 {
+    header .top-side ul#cars-menu>li>a {
         font-size: 25px;
-        margin: 0 0 15px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 20%;
+        left: 10%;
+    }
+    header .top-side ul#cars-menu>li>a {
+        max-width: unset;
+    }
+    header .top-side ul#cars-menu>li>ul {
+        top: 45px;
+    }
+    header .top-side ul#cars-menu>li>ul>li a {
+        font-size: 25px;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        // height: 40%!important;
+        // width: 35%!important;
+        height: auto !important;
+        width: auto !important;
+        padding: 15px 30px!important;
+    }
+}
+// ..................
+
+@media only screen and (min-width: 320px) {
+    header {
+        height: 368px;
+        background-color: white;
+    }
+    header .top-side {
+        padding: 5px 15px 5px 20px;
+        height: 50px;
+        width: 100%;
     }
     header .top-side ul#cars-menu {
-        margin: 0 25px 0 0;
-        height: 10px;
+        margin: 0px;
+    }
+    header .top-side>div a img {
+        height: 30px;
+        width: 50px;
+    }
+    header .top-side #open-menu-button>img {
+        height: 30px;
+        width: 30px;
+    }
+    header .top-side ul.small-cars-menu>li>a {
+        font-size: 20px!important;
+    }
+    header .top-side ul#cars-menu>li>ul>li a {
+        font-size: 18px;
+    }
+    header .top-side ul.small-cars-menu {
+        top: 60px;
+    }
+    header>.background-container img {
+        height: 130px;
+        top: 50px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 190px;
+        left: 15px;
+        max-width: 285px;
+        animation: none;
+        padding: 5px 5px;
+    }
+    header>.background-container>.bg-wrapper.active .info hr {
+        width: 20%;
+    }
+    header>.background-container>.bg-wrapper.active .info h2 {
+        font-size: 16px;
+        color: black;
+        padding: 0px;
+        margin: 0px 0px 20px 0px;
+    }
+    header>.background-container>.bg-wrapper.active .info a {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    header>.background-container .right-slider, 
+    header>.background-container .left-slider {
+        top: 25%;
+        height: 25px;
+        width: 20px;
+    }
+    header>.background-container .right-slider{
+        right: 15px;
+    }
+    header>.background-container .left-slider{
+        left: 15px;
+    }
+    header .communication {
+        top: 60%;
+        right: -180px;
+        z-index: 3;
+    }
+    main {
+        padding: 0px 0px 50px 0px;
+    }
+    main hr {
+        height: 3px;
+    }
+    main>div.label {
+        left: -230px;
+        top: 220px;
+    }
+    main .carParkTitle {
+        font-size: 25px;
+        text-align: center;
+    }
+    main .wrapper .block {
+        max-height: 350px;
+        box-shadow: 0 0 10px 3px #d8d4d4;
+    }
+    main .wrapper .block .image-box {
+        margin-bottom: 0px;
+        height: 55%;
+    }
+    main .wrapper .block .image-box img {
+        height: 180px;
+        width: 250px;
+    }
+    main .wrapper .block .info {
+        align-items: center;
+        padding: 0px 10px;
+    }
+    main .wrapper .block .info .pricelist {
+        margin: 5px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    main .wrapper .block .info .pricelist div {
+        width: 50%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    main .wrapper .block .info .pricelist div span img {
+        left: 0px;
+    }
+    main>div.label {
+        left: -200px;
+        top: 220px;
+        font-size: 140px;
+        z-index: -1;
+    }
+    article {
+        padding: 30px 0;
+    }
+    article h2 {
+        font-size: 24px;
+        text-align: center;
     }
     article .description {
-        width: 90%;
+        width: 100%;
+    }
+    article .description div img {
+        height: 40px;
+        width: 40px;
+    }
+    article .description div .iconWrapper {
+        height: 80px;
+        width: 80px;
     }
     article .description div {
-        width: 209px;
-    }
-    aside {
-        padding: 20px 50px;
-    }
-    aside .info-container {
-        padding: 30px 100px 0px 100px;
+        height: 270px;
+        width: 160px;
     }
     footer {
         padding: 30px 30px;
+        flex-direction: column;
+    }
+    footer .aboutUs-block, footer .information-block {
+        display: none;
+    }
+    footer .contacts-block .tel {
+        margin-left: 0px;
+    }
+    footer .contacts-block {
+        flex-direction: column;
+        align-items: flex-start;
+        align-items: center;
+        border-left: none;
+        border-top: 2px solid #dd1c1c;
+        padding: 0px;
+        margin: 10px 0px 0px 0px;
+    }
+    footer .contacts-block>div {
+        margin: 10px 0;
+    }
+    .dialog-wrapper {
+        z-index: 2;
     }
     .dialog-wrapper .ui-dialog {
-        padding: 20px 25px!important;
-        height: 45%!important;
-        width: 95%!important;
+        height: 90%!important;
+        width: 280px!important;
+        padding: 0px 5px!important;
+        overflow: scroll;
+        border-bottom: 20px solid rgba(0,0,0,0);
+        border-top: 20px solid rgba(0,0,0,0);
     }
     .dialog-wrapper .ui-dialog #dialog {
-        align-items: center;
+        flex-direction: column;
+        padding: 0px 10px;
+        box-sizing: border-box;
     }
-    .dialog-wrapper .ui-dialog #dialog .dialog-img-container {
-        height: 90%;
+    .dialog-wrapper .ui-dialog #dialog .dialog-info {
+        padding: 20px 0px;
+        width: 100%;
+        min-height: 80%;
     }
-    .dialog-wrapper .ui-dialog #dialog .dialog-info div {
-        margin: 5px 0;
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title img {
+        height: 25px;
+        width: 25px;
     }
-    .dialog-wrapper .makeAnOrderPopup .ui-dialog-titlebar {
-        height: 20%!important;
-    }
-    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3 {
-        font-size: 25px;
-    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3,
     .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
-        font-size: 25px;
-    }
-    .dialog-wrapper .makeAnOrderPopup {
-        height: 20%!important;
-        width: 50%!important;
-    }
-}
-                                    // 1024px
-@media only screen and (max-width: $largeWidth) and (orientation: landscape) {
-    header>.background-container>.bg-wrapper.active .info {
-        max-width: 60%;
-        top: 130px;
-    }
-    header>.background-container>.bg-wrapper.active .info h2 {
-        font-size: 25px;
-        margin: 0 0 20px;
-    }
-    header .top-side ul#cars-menu {
-        margin: 0 0px 0 0;
-    }
-}
-                                    //900px
-@media only screen and (max-width: $middleWidth ) and (orientation : portrait){
-header {
-    height: 50vh;
-}
-header .top-side ul#cars-menu {
-    margin: 0 0px 0 0;
-    height: auto;
-}
-header .top-side ul#cars-menu>li>a {
-    padding: 2px 10px;
-}
-header>.background-container .left-slider {
-    left: 30px;
-}
-header>.background-container .right-slider {
-    right: 30px;
-}
-header .background-container .bg-wrapper.active .info {
-    top: 120px;
-    left: 70px;
-}
-article .description {
-    width: 90%;
-}
-footer {
-    padding: 30px 20px;
-}
-footer>div {
-    padding: 0px 10px;
-}
-
-.dialog-wrapper .ui-dialog {
-    height: 80%!important;
-    width: 95%!important;
-}
-.dialog-wrapper .makeAnOrderPopup {
-    height: 40%!important;
-    width: 50%!important;
-}
-.dialog-wrapper .makeAnOrderPopup .ui-dialog-titlebar {
-    height: 20%!important;
-}
-.dialog-wrapper .ui-dialog .ui-dialog-titlebar span {
-    font-size: 25px;
-}
-.dialog-wrapper .makeAnOrderPopup .contacts h3 {
-    font-size: 22px;
-}
-.dialog-wrapper .makeAnOrderPopup .contacts p {
-    font-size: 18px;
-}
-.dialog-wrapper .makeAnOrderPopup .contacts>div {
-    font-size: 18px;
-}
-.dialog-wrapper .makeAnOrderPopup .contacts>div a {
-    font-size: 20px;
-}
-}
-                                    // 768px
-@media only screen and (max-width: $smallWidth ) and (orientation : portrait) {
-    header>.background-container>.bg-wrapper.active .info {
-        top: 120px;
-        left: 90px;
-        max-width: 60%;
-        padding: 15px 10px;
-    }
-    header>.background-container>.bg-wrapper.active .info h2 {
-        font-size: 25px;
-        margin: 0 0 15px;
-    }
-    header .top-side ul#cars-menu {
-        margin: 0 0px 0 0;
-        height: 100vh;
-    }
-    .dialog-wrapper .ui-dialog {
-        height: 50%!important;
-        width: 95%!important;
-    }
-    .dialog-wrapper .makeAnOrderPopup {
-        height: 35%!important;
-        width: 70%!important;
-    }
-    .dialog-wrapper .ui-dialog #dialog .dialog-info div {
-        margin: 5px 0;
+        font-size: 18px;
     }
     .dialog-wrapper .ui-dialog #dialog .dialog-info div.specifications {
         display: flex;
         flex-wrap: wrap;
     }
     .dialog-wrapper .ui-dialog #dialog .dialog-info .specifications span {
-        margin: 0px 25px 0px 0px;
+        font-size: 13px;
+        margin: 0 5px 0 0;
+        width: 48%;
     }
-    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3 {
-        font-size: 20px;
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar {
+        flex-direction: column-reverse;
     }
-    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
-        font-size: 20px;
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar button {
+        align-self: flex-end;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar span {
+        font-size: 16px;
     }
     .dialog-wrapper .ui-dialog #dialog .dialog-img-container {
-        width: 50%;
-        height: 85%;
+        width: 100%;
+        min-height: 55%;
+        margin: 0;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container .dialog-img-wrapper {
+        height: 22%;
+        padding: 5px 0px;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        height: auto !important;
+        max-height: 350px!important;
+        padding: 10px 15px!important;
+        border: none !important;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts h3 {
+        font-size: 20px;
+    }
+    .dialog-wrapper .makeAnOrderPopup #dialog {
+        padding: 0px;
+        text-align: center;
+        overflow: unset;
+    }
+    .dialog-wrapper .makeAnOrderPopup .ui-dialog-titlebar {
+        height: 25%!important;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar span {
+        text-align: start;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar button {
+        margin-bottom: 0px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts>div {
+        flex-direction: column;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts>div a {
+        font-size: 25px;
     }
     
 }
-                        // 768px
-@media only screen and (max-width: $smallWidth) and (orientation: landscape) {
+@media only screen and (min-width: 375px) {
     header {
-        height: 80vh;
+        height: 410px;
+    }
+    header>.background-container img {
+        height: 150px;
+        top: 50px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 205px;
+        max-width: 325px;
+    }
+    main>div.label {
+        left: -210px;
+    }
+    .dialog-wrapper .ui-dialog {
+        height: 85%!important;
+        width: 350px !important;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container {
+        min-height: 60%;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container .dialog-img-wrapper {
+        padding: 7px 0;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .specifications span {
+        width: 45%;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        min-height: 300px;
+        max-height: 310px !important;
     }
 }
-  
+@media only screen and (min-width: 410px) {
+    header>.background-container img {
+        height: 165px;
+        top: 50px;
+    }
+    header {
+        height: 400px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 220px;
+        left: 15px;
+        width: 375px;
+        max-width: none;
+    }
+}
+@media only screen and (min-width: 480px) {
+    header {
+        height: 415px;
+    }
+    header>.background-container img {
+        height: 190px;
+        top: 55px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 250px;
+    }
+    header>.background-container .left-slider, header>.background-container .right-slider {
+        top: 30%;
+        height: 30px;
+        width: 30px;
+    }
+    header .top-side {
+        height: 55px;
+    }
+    footer>div .title {
+        font-size: 20px;
+    }
+    footer>div a {
+        font-size: 18px;
+    }
+    footer>.aboutUs-block a,
+    footer>.weOffer-block a {
+        width: 60%;
+    }
+    footer .contacts-block p {
+        font-size: 18px;
+    }
+    footer .contacts-block .tel a {
+        font-size: 28px;
+    }
+    footer .contacts-block .tel p img {
+        width: 40px;
+        height: 30px;
+    }
+    footer .contacts-block .socialApps img {
+        height: 60px;
+        width: 60px;
+    }
+    .dialog-wrapper .ui-dialog {
+        height: 95%!important;
+        width: 390px!important;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar span {
+        font-size: 22px;
+    }
+    .dialog-wrapper .ui-dialog #dialog {
+        padding: 20px 10px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3, 
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
+        font-size: 25px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div p {
+        font-size: 18px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .specifications span {
+        font-size: 18px;
+        width: 45%;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        min-height: 310px;
+        max-height: 325px!important;
+    }
+}
+@media only screen and (min-width: 540px) {
+    header {
+        height: 460px;
+    }
+    header>.background-container img {
+        height: 230px;
+        top: 55px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 280px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 290px;
+    }
+}
+@media only screen and (min-width: 620px) {
+    header {
+        height: 505px;
+    }
+    header .top-side.active {
+        padding: 10px 15px 5px 20px;
+    }
+    header>.background-container img {
+        height: 250px;
+        top: 54px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 315px;
+        width: 500px;
+    }
+    header>.background-container>.bg-wrapper.active .info h2 {
+        font-size: 22px;
+    }
+    header>.background-container>.bg-wrapper.active .info a {
+        font-size: 17px;
+    }
+    header .communication {
+        right: -220px;
+    }
+    header .communication div>img {
+        height: 35px;
+        width: 30px;
+    }
+    header .communication div a {
+        font-size: 25px;
+    }
+    div.active {
+        animation-name: showCommnElement;
+    }
+    @keyframes showCommnElement {
+        from{right: 0px}
+        to{right: 220px;}
+    }
+    main .wrapper .block {
+        max-height: 360px;
+    }
+    main .wrapper .block .image-box {
+        height: 55%;
+    }
+    main .wrapper .block .image-box img {
+        height: 200px;
+        width: 280px;
+    }
+    main .wrapper .block .info {
+        height: auto;
+    }
+    main .wrapper .block .info h2 {
+        font-size: 20px;
+    }
+    main .wrapper .block .info .pricelist div p {
+        font-size: 18px;
+    }
+    main .wrapper .block .info .pricelist div {
+        font-size: 20px;
+    }
+    main .wrapper .block .info .pricelist div p {
+        font-size: 18px;
+    }
+    main .wrapper .block .info .pricelist input {
+        font-size: 15px;
+    }
+    main .main-menu-buttons input {
+        height: auto;
+        padding: 5px 30px;
+        font-size: 15px;
+    }
+    footer>div .title {
+        font-size: 25px;
+    }
+    footer>div a {
+        font-size: 22px;
+    }
+    footer .contacts-block p {
+        font-size: 20px;
+    }
+    footer .contacts-block .tel a {
+        font-size: 35px;
+    }
+    .dialog-wrapper .ui-dialog {
+        height: 95%!important;
+        width: 480px!important;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar button {
+        font-size: 16px;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar span {
+        font-size: 28px;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar button {
+        font-size: 18px;
+        height: auto;
+        line-height: normal;
+        padding: 10px 25px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3, 
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
+        font-size: 30px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div p {
+        font-size: 20px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .specifications span {
+        font-size: 20px;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        min-height: 310px;
+        max-height: 380px!important;
+    }
+    .dialog-wrapper .makeAnOrderPopup .ui-dialog-titlebar {
+        height: auto !important;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar span {
+        align-self: flex-start;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts h3 {
+        font-size: 26px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts p {
+        font-size: 22px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts>div {
+        font-size: 24px;
+    }
+    .dialog-wrapper .ui-dialog #dialog {
+        padding: 10px 10px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts a img {
+        height: 60px;
+        width: 60px;
+    }
+}
+@media only screen and (min-width: 720px) {
+    header {
+        height: 445px;
+    }
+    header>.background-container img {
+        height: 315px;
+        top: 54px;
+    }
+    header>.background-container .left-slider, 
+    header>.background-container .right-slider {
+        top: 45%;
+        height: 35px;
+        width: 30px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 70px;
+        left: 70px;
+        width: 500px;
+        animation-name: bg;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+        padding: 10px;
+    }
+    header>.background-container>.bg-wrapper.active .info hr {
+        height: 3px;
+    }
+    header>.background-container>.bg-wrapper.active .info h2 {
+        font-size: 20px;
+        color: white;
+    }
+    header>.background-container>.bg-wrapper.active .info a {
+        font-size: 14px;
+    }
+    header .top-side #open-menu-button>img {
+        height: 40px;
+        width: 40px;
+    }
+    header .top-side ul#cars-menu>li>ul {
+        border-top: 8px solid #dd1c1c;
+        padding: 20px 40px;
+    }
+    header .top-side ul.small-cars-menu>li>a {
+        font-size: 40px!important;
+    }
+    header .top-side ul#cars-menu>li>ul>li a {
+        font-size: 35px;
+    }
+    header .top-side>div a img {
+        height: 40px;
+        width: 60px;
+    }
+    main .carParkTitle {
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+    main>div.label {
+        left: -250px;
+        top: 240px;
+        font-size: 180px;
+    }
+    main .wrapper .block {
+        max-height: 470px;
+    }
+    main .wrapper .block .image-box {
+        display: flex;
+        justify-content: center;
+    }
+    main .wrapper .block .image-box img {
+        height: 220px;
+        width: 300px;
+    }
+    main .wrapper .block .info h2 {
+        font-size: 21px;
+    }
+    main .wrapper .block .info .pricelist div {
+        width: 45%;
+    }
+    main .wrapper .block .info .pricelist div p {
+        font-size: 20px;
+    }
+    main .wrapper .block .info .pricelist div span, 
+    main .wrapper .block .info .pricelist div {
+        font-size: 22px;
+    }
+    main .wrapper .block .info .pricelist div span img {
+        width: 25px;
+        height: 25px;
+        top: 4px;
+    }
+    main .wrapper .block .info .pricelist input {
+        font-size: 16px;
+        padding: 10px 5px;
+        height: auto;
+        line-height: unset;
+    }
+    main .main-menu-buttons input {
+        margin: 20px 0px 0px 0px;
+        font-size: 15px;
+    }
+    article h2 {
+        font-size: 30px;
+    }
+    article .description {
+        width: 90%;
+    }
+    article .description div h3 {
+        font-size: 18px;
+    }
+    aside>.information>a {
+        font-size: 15px;
+        margin: 0px;
+    }
+    aside>.information .close-button {
+        margin-left: 20px;
+    }
+    aside .info-container {
+        padding: 30px 0px 0px 0px;
+    }
+    footer {
+        padding: 30px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    footer>div {
+        width: 40%;
+    }
+    footer>div .title {
+        font-size: 22px;
+    }
+    footer div a,
+    footer>.aboutUs-block a, 
+    footer>.weOffer-block a {
+        width: 100%;
+        font-size: 18px;
+    }
+    footer .contacts-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-left: none;
+        border-top: 2px solid #dd1c1c;
+        width: 100%;
+        padding: 0px;
+        margin-top: 10px;
+    }
+    footer .contacts-block>.first {
+        width: 60%;
+    }
+    footer .contacts-block .tel {
+        width: 30%;
+    }
+    footer .contacts-block> .socialApps {
+        width: 12%;
+    }
+    footer .contacts-block img {
+        height: 18px;
+        width: 18px;
+        margin-right: 5px;
+    }
+    footer .contacts-block p {
+        font-size: 15px;
+    }
+    footer .contacts-block .tel p {
+        align-items: center;
+    }
+    footer .contacts-block .tel p img {
+        width: 20px;
+        height: 18px;
+    }
+    footer .contacts-block .tel a {
+        font-size: 22px;
+    }
+    footer .contacts-block .socialApps img {
+        height: 30px;
+        width: 30px;
+    }
+    .dialog-wrapper .ui-dialog {
+        width: 520px!important;
+        padding: 15px 10px!important;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar button {
+        font-size: 28px;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar span {
+        font-size: 29px;
+    }
+    .dialog-wrapper .ui-dialog #dialog {
+        padding: 0px 15px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container {
+        min-height: 52%;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container .dialog-img-wrapper {
+        padding: 15px 0;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title img {
+        height: 45px;
+        width: 45px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3, 
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
+        font-size: 32px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div p {
+        font-size: 24px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .specifications span {
+        font-size: 24px;
+    }
+    // .............
+    .dialog-wrapper .makeAnOrderPopup {
+        min-height: 310px;
+        max-height: 380px!important;
+        width: 620px!important;
+    }
+    .dialog-wrapper .makeAnOrderPopup #dialog {
+        text-align: unset;
+        overflow: unset;
+        align-items: flex-start;
+    }
+    .dialog-wrapper .makeAnOrderPopup #dialog {
+        align-items: flex-start !important;
+    }
+    .dialog-wrapper .makeAnOrderPopup #dialog .contacts>div {
+        font-size: 24px;
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts h3 {
+        font-size: 30px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts>div a {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+}
+@media only screen and (min-width: 840px) {
+    header {
+        height: 470px;
+    }
+    header .top-side {
+        height: 70px;
+        padding: 5px 25px 5px 30px;
+    }
+    header .top-side.active {
+        padding: 10px 25px 5px 30px;
+    }
+    header .top-side>div a img {
+        height: 50px;
+        width: 80px;
+    }
+    header .top-side #open-menu-button>img {
+        height: 40px;
+        width: 45px;
+    }
+    header>.background-container img {
+        height: 350px;
+        top: 70px
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 90px;
+        left: 80px;
+    }
+    main .main-menu-buttons input {
+        margin: 20px 0px 0px 0px;
+        font-size: 20px;
+    }
+    main .wrapper .block {
+        margin: 10px 20px;
+    }
+    article .description div {
+        width: 180px;
+    }
+    footer .aboutUs-block, footer .information-block {
+        display: flex;
+    }
+    footer>div {
+        padding: 0px;
+        width: 30%;
+    }
+    footer .information-block {
+        display: flex;
+    }
+    footer> .ourPark-block {
+        width: 22%;
+    }
+    footer .aboutUs-block {
+        width: 15%;
+    }
+    footer>div .title {
+        font-size: 18px;
+    }
+    footer div a, 
+    footer .contacts-block p {
+        font-size: 16px;
+    }
+    footer .contacts-block>.first {
+        width: 70%;
+    }
+    footer .contacts-block img {
+        height: 20px;
+        width: 22px;
+    }
+    footer .contacts-block .tel a {
+        font-size: 22px;
+    }
+    footer .contacts-block .tel p img {
+        width: 22px;
+        height: 20px;
+    }
+}
+@media only screen and (min-width: 900px) { 
+    header .top-side ul#cars-menu {
+        margin: 0 20px 0 0;
+    }
+    header .top-side ul#cars-menu>li>ul {
+        padding: 0px 0px;
+    }
+    header .top-side ul#cars-menu>li>a {
+        padding: 2px 10px;
+    }
+    header .top-side ul#cars-menu>li>ul>li a {
+        font-size: 20px;
+        padding: 10px 80px 10px 30px;
+    }
+    header>.background-container img {
+        height: 360px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        width: 520px;
+    }
+    header>.background-container .left-slider, 
+    header>.background-container .right-slider {
+        top: 45%;
+    }
 
+}
+@media only screen and (min-width: 1024px) {
+    header>.background-container img {
+        height: 400px;
+    }
+    header .top-side>div a img {
+        height: 40px;
+        width: 65px;
+    }
+    header .top-side ul#cars-menu>li>ul {
+        border-top: 4px solid #dd1c1c;
+        top: 29px;
+    }
+    header .top-side ul#cars-menu>li>a {
+        font-size: 18px;
+    }
+    header .top-side ul#cars-menu>li>ul>li a {
+        font-size: 18px;
+        padding: 10px 90px 10px 40px;
+    }
+    header>.background-container .left-slider, 
+    header>.background-container .right-slider {
+        top: 50%;
+        height: 35px;
+        width: 35px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        top: 100px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        padding: 10px;
+    }
+    header>.background-container>.bg-wrapper.active .info hr {
+        height: 3px;
+    }
+    header>.background-container>.bg-wrapper.active .info h2 {
+        font-size: 21px;
+    }
+    header>.background-container>.bg-wrapper.active .info a {
+        font-size: 16px;
+    }
+    header .communication {
+        right: -180px;
+    }
+    div.active {
+        animation-name: showCommnElement;
+    }
+    @keyframes showCommnElement {
+        from{right: 0px}
+        to{right: 180px}
+    }
+    header .communication div {
+        padding: 5px;
+    }
+    header .communication div>img {
+        height: 30px;
+        width: 25px;
+    }
+    header .communication div a {
+        font-size: 20px;
+    }
+    header .communication div a img {
+        height: 35px;
+        width: 35px;
+    }
+    main {
+        margin-top: 50px;
+    }
+    main hr {
+        height: 2px;
+    }
+    main>div.label {
+        left: -240px;
+        top: 345px;
+        font-size: 170px;
+    }
+    main .carParkTitle {
+        font-size: 22px;
+    }
+    main .wrapper {
+        width: 75%;
+    }
+    main .wrapper .block {
+        max-height: 700px;
+        padding: 10px;
+        max-width: 268px;
+        box-shadow: none;
+    }
+    main .wrapper .block .image-box {
+        padding: 10px 15px;
+    }
+    main .wrapper .block .image-box img {
+        height: 170px;
+        width: 230px;
+    }
+    main .wrapper .block .info h2 {
+        font-size: 18px;
+    }
+    main .wrapper .block .info {
+        padding: 0 0px;
+        margin: 0px 0px 20px 0px;
+    }
+    main .wrapper .block .info .pricelist input {
+        font-size: 14px;
+        padding: 8px 5px;
+        line-height: unset;
+    }
+    main .wrapper .block .info .pricelist div {
+        width: 48%;
+        font-size: 18px;
+    }
+    main .wrapper .block .info .pricelist div p {
+        font-size: 18px;
+    }
+    main .wrapper .block .info .pricelist div span {
+        font-size: 18px;
+    }
+    main .wrapper .block .info .pricelist div span img {
+        width: 25px;
+        height: 25px;
+        left: 0px;
+        top: 0px;
+    }
+    article {
+        padding: 30px 0px 80px 0px;
+    }
+    article h2 {
+        font-size: 35px;
+    }
+    article .description {
+        width: 80%;
+    }
+    article .description div .iconWrapper {
+        height: 95px;
+        width: 95px;
+    }
+    article .description >div {
+        height: auto;
+        padding: 10px;
+    }
+    article .description div img {
+        height: 45px;
+        width: 45px;
+    }
+    article .description div h3 {
+        font-size: 19px;
+    }
+    aside {
+        padding: 20px 50px;
+    }
+    aside>.information>a {
+        font-size: 18px;
+    }
+    aside .info-container h3 {
+        font-size: 22px;
+    }
+    aside .info-container li, aside .info-container p {
+        font-size: 18px;
+    }
+    footer {
+        flex-wrap: nowrap;
+    }
+    footer>.aboutUs-block a, 
+    footer>.weOffer-block a, 
+    footer div a {
+        font-size: 16px;
+    }
+    footer>div {
+        padding: 0;
+        width: auto !important;
+        flex-grow: 1;
+    }
+    footer .contacts-block {
+        flex-direction: column;
+        border-left: 2px solid #dd1c1c;
+        border-top: none;
+        align-items: flex-start;
+        margin: 0px;
+    }
+    footer .contacts-block> div {
+        width: auto !important;
+        margin-left: 10px !important;
+    }
+    footer .contacts-block> .socialApps {
+        width: 15%;
+        padding: 0px 40px 0px 0px;
+    }
+    .dialog-wrapper .ui-dialog {
+        width: 900px!important;
+        height: 530px!important;
+        overflow: hidden;
+        padding: 0px 10px !important;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar {
+        flex-direction: row;
+        margin-bottom: 10px;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar button {
+        font-size: 16px;
+    }
+    .dialog-wrapper .ui-dialog #dialog {
+        flex-direction: row;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container {
+        height: 100%;
+        align-self: flex-start;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container .main-place-img {
+        height: 70%;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container .dialog-img-wrapper {
+        height: 25%;
+        padding: 25px 0px 15px 0px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info {
+        padding: 0 20px;
+        width: 100%;
+        height: 98%;
+        align-self: flex-start;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3, 
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
+        font-size: 26px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title img {
+        height: 30px;
+        width: 30px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div p {
+        font-size: 18px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .specifications span {
+        font-size: 18px;
+        width: 48%;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        width: 560px!important;
+        min-height: auto;
+        height: 285px!important;
+        padding: 10px!important;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts h3 {
+        font-size: 34px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts p {
+        font-size: 30px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts a img {
+        height: 70px;
+        width: 70px;
+    }
+    .dialog-wrapper .makeAnOrderPopup #dialog .contacts>div {
+        font-size: 30px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts>div a {
+        font-size: 35px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .ui-dialog-titlebar span {
+        font-size: 25px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts>div a,
+    .dialog-wrapper .makeAnOrderPopup .contacts h3 {
+        font-size: 26px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts p,
+    .dialog-wrapper .makeAnOrderPopup #dialog .contacts>div {
+        font-size: 22px;
+    }
+    .dialog-wrapper .makeAnOrderPopup .contacts a img {
+        height: 50px;
+        width: 50px;
+    }
+}
+@media only screen and (min-width: 1124px) {
+    header>.background-container img {
+        height: 425px;
+    }
+    main .wrapper {
+        width: 95%;
+    }
+    article .description {
+        width: 90%;
+    }
+    article .description>div {
+        padding: 10px 25px;
+    }
+    footer>div a {
+        width: 100% !important;
+    }
+    .dialog-wrapper .ui-dialog {
+        width: 1050px!important;
+        height: 600px!important;
+    }
+    .dialog-wrapper .ui-dialog .ui-dialog-titlebar button {
+        font-size: 24px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container {
+        height: 100%;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container .main-place-img {
+        height: 80%;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-img-container .dialog-img-wrapper {
+        height: 20%;
+        padding: 10px 0 15px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info div p {
+        font-size: 22px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title img {
+        height: 40px;
+        width: 40px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3, 
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
+        font-size: 30px;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .specifications span {
+        font-size: 20px;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        width: 560px!important;
+        min-height: auto;
+        height: 285px!important;
+        padding: 10px!important;
+    }
+}
+@media only screen and (min-width: 1280px) {
+    header {
+        height: 575px;
+    }
+    header .top-side {
+        height: 13%;
+        padding: 5px 35px 5px 40px;
+    }
+    header .top-side ul#cars-menu>li>ul {
+        top: 32px;
+    }
+    header .top-side ul#cars-menu>li>a {
+        font-size: 20px;
+        max-width: 160px;
+        padding: 0px 15px;
+    }
+    header .top-side ul#cars-menu>li>ul>li a {
+        font-size: 22px;
+    }
+    header .top-side>div a img {
+        height: 45px;
+        width: 75px;
+    }
+    header>.background-container img {
+        height: 500px;
+        top: 72px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        width: 600px;
+        padding: 20px;
+        top: 100px;
+    }
+    header>.background-container>.bg-wrapper.active .info h2 {
+        font-size: 22px;
+    }
+    header>.background-container>.bg-wrapper.active .info {
+        width: 650px;
+    }
+    header>.background-container>.bg-wrapper.active .info a {
+        font-size: 18px;
+    }
+    header>.background-container .left-slider, 
+    header>.background-container .right-slider {
+        top: 50%;
+        height: 40px;
+        width: 35px;
+    }
+    header .communication div {
+        padding: 6px;
+    }
+    //......
+    main .wrapper {
+        width: 75%;
+    }
+    main .carParkTitle {
+        margin-bottom: 20px;
+    }
+    main>div.label {
+        left: -220px;
+        top: 300px;
+    }
+    main .wrapper .block {
+        height: 390px;
+        width: 330px;
+        margin: 20px 20px;
+        padding: 20px 10px;
+        box-shadow: none;
+        max-width: unset;
+    }
+    main .wrapper .block .image-box {
+        height: 60%;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    main .wrapper .block .image-box img {
+        height: 220px;
+        width: 270px;
+    }
+    main .wrapper .block .info {
+        height: 40%;
+        margin: 0px 0px 30px 0px;
+    }
+    main .wrapper .block .info h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    main .wrapper .block .info .pricelist div {
+        width: 31%;
+        text-align: unset;
+    }
+    main .wrapper .block .info .pricelist div p {
+        font-size: 16px;
+    }
+    main .wrapper .block .info .pricelist div span, 
+    main .wrapper .block .info .pricelist div {
+        font-size: 18px;
+    }
+    main .wrapper .block .info .pricelist div span img {
+        left: -18px;
+    }
+    main .wrapper .block .info .pricelist input {
+        font-size: 12px;
+    }
+    main .main-menu-buttons input {
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+    article .description {
+        width: 85%;
+    }
+    article .description div {
+        width: 215px;
+    }
+    article .description div img {
+        height: 50px;
+        width: 50px;
+    }
+    article .description div .iconWrapper {
+        height: 100px;
+        width: 100px;
+    }
+    article .description div h3 {
+        font-size: 22px;
+    }
+    footer {
+        flex-wrap: nowrap;
+    }
+    footer>.aboutUs-block a, 
+    footer>.weOffer-block a, 
+    footer div a {
+        font-size: 18px;
+    }
+    footer>div {
+        padding: 0;
+        width: auto !important;
+        flex-grow: 1;
+    }
+    footer .contacts-block {
+        flex-direction: column;
+        border-left: 2px solid #dd1c1c;
+        border-top: none;
+        align-items: flex-start;
+        margin: 0px;
+    }
+    footer .contacts-block> div {
+        width: auto !important;
+        margin-left: 10px !important;
+    }
+    footer .contacts-block> .socialApps {
+        width: 15%;
+        padding: 0px 40px 0px 0px;
+    }
+    .dialog-wrapper .ui-dialog {
+        width: 1200px!important;
+        height: 650px!important;
+    }
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h3, 
+    .dialog-wrapper .ui-dialog #dialog .dialog-info .title h4 {
+        font-size: 32px;
+    }
+    .dialog-wrapper .makeAnOrderPopup {
+        width: 559px!important;
+        height: 285px!important;
+    }
 
+}
+@media only screen and (min-width: 1366px) {
+
+}
                         

@@ -28,15 +28,15 @@ export class Model {
                     trunk: 3,
                     childrenSit: 200
                 },
-                src: './src/images/222white.jpg',
+                src: './src/images/222white.png',
                 class: 'executive',
                 img: {
-                    main: './src/images/w222white/main.jpg',
-                    first: './src/images/w222white/1.jpg',
-                    second: './src/images/w222white/2.jpg',
-                    third: './src/images/w222white/3.jpg',
-                    fourth: './src/images/w222white/4.jpg',
-                    fifth: './src/images/w222white/5.jpg'
+                    main: './src/images/w222white/main.JPG',
+                    first: './src/images/w222white/1.JPG',
+                    second: './src/images/w222white/2.JPG',
+                    third: './src/images/w222white/3.JPG',
+                    fourth: './src/images/w222white/4.JPG',
+                    fifth: './src/images/w222white/5.JPG'
                 },
                 trans: false,
                 rent: true
@@ -67,12 +67,12 @@ export class Model {
                 src: './src/images/212white.png',
                 class: 'business',
                 img: {
-                    main: './src/images/e212white/main.jpg',
-                    first: './src/images/e212white/1.jpg',
-                    second: './src/images/e212white/2.jpg',
-                    third: './src/images/e212white/3.jpg',
-                    fourth: './src/images/e212white/4.jpg',
-                    fifth: './src/images/e212white/5.jpg'
+                    main: './src/images/e212white/main.JPG',
+                    first: './src/images/e212white/1.JPG',
+                    second: './src/images/e212white/2.JPG',
+                    third: './src/images/e212white/3.JPG',
+                    fourth: './src/images/e212white/4.JPG',
+                    fifth: './src/images/e212white/5.JPG'
                 },
                 trans: false,
                 rent: true
@@ -100,15 +100,15 @@ export class Model {
                     trunk: 3,
                     childrenSit: 200
                 },
-                src: './src/images/222black.jpg',
+                src: './src/images/222black.png',
                 class: 'executive',
                 img: {
-                    main: './src/images/w222black/main.jpg',
-                    first: './src/images/w222black/1.jpg',
-                    second: './src/images/w222black/2.jpg',
-                    third: './src/images/w222black/3.jpg',
-                    fourth: './src/images/w222black/4.jpg',
-                    fifth: './src/images/w222black/5.jpg'
+                    main: './src/images/w222black/main.JPG',
+                    first: './src/images/w222black/1.JPG',
+                    second: './src/images/w222black/2.JPG',
+                    third: './src/images/w222black/3.JPG',
+                    fourth: './src/images/w222black/4.JPG',
+                    fifth: './src/images/w222black/5.JPG'
                 },
                 trans: false,
                 rent: true
@@ -139,12 +139,12 @@ export class Model {
                 src: './src/images/212black.png',
                 class: 'business',
                 img: {
-                    main: './src/images/e212black/main.jpg',
-                    first: './src/images/e212black/1.jpg',
-                    second: './src/images/e212black/2.jpg',
-                    third: './src/images/e212black/3.jpg',
-                    fourth: './src/images/e212black/4.jpg',
-                    fifth: './src/images/e212black/5.jpg'
+                    main: './src/images/e212black/main.JPG',
+                    first: './src/images/e212black/1.JPG',
+                    second: './src/images/e212black/2.JPG',
+                    third: './src/images/e212black/3.JPG',
+                    fourth: './src/images/e212black/4.JPG',
+                    fifth: './src/images/e212black/5.JPG'
                 },
                 trans: false,
                 rent: true
@@ -175,12 +175,12 @@ export class Model {
                 src: './src/images/mercedes-ml.png',
                 class: 'off-road',
                 img: {
-                    main: './src/images/mlblack/main.jpg',
-                    first: './src/images/mlblack/1.jpg',
-                    second: './src/images/mlblack/2.jpg',
-                    third: './src/images/mlblack/3.jpg',
-                    fourth: './src/images/mlblack/4.jpg',
-                    fifth: './src/images/mlblack/5.jpg'
+                    main: './src/images/mlblack/main.JPG',
+                    first: './src/images/mlblack/1.JPG',
+                    second: './src/images/mlblack/2.JPG',
+                    third: './src/images/mlblack/3.JPG',
+                    fourth: './src/images/mlblack/4.JPG',
+                    fifth: './src/images/mlblack/5.JPG'
                 },
                 trans: false,
                 rent: true
@@ -211,12 +211,12 @@ export class Model {
                 src: './src/images/mercedes-g.png',
                 class: 'off-road',
                 img: {
-                    main: './src/images/Gblack/main.jpg',
-                    first: './src/images/Gblack/1.jpg',
-                    second: './src/images/Gblack/2.jpg',
-                    third: './src/images/Gblack/3.jpg',
-                    fourth: './src/images/Gblack/4.jpg',
-                    fifth: './src/images/Gblack/5.jpg'
+                    main: './src/images/Gblack/main.JPG',
+                    first: './src/images/Gblack/1.JPG',
+                    second: './src/images/Gblack/2.JPG',
+                    third: './src/images/Gblack/3.JPG',
+                    fourth: './src/images/Gblack/4.JPG',
+                    fifth: './src/images/Gblack/5.JPG'
                 },
                 trans: false,
                 rent: true
@@ -247,12 +247,12 @@ export class Model {
                 src: './src/images/maybach.png',
                 class: 'premium',
                 img: {
-                    main: './src/images/maybach/main.jpg',
-                    first: './src/images/maybach/1.jpg',
-                    second: './src/images/maybach/2.jpg',
-                    third: './src/images/maybach/3.jpg',
-                    fourth: './src/images/maybach/4.jpg',
-                    fifth: './src/images/maybach/5.jpg'
+                    main: './src/images/maybach/main.JPG',
+                    first: './src/images/maybach/1.JPG',
+                    second: './src/images/maybach/2.JPG',
+                    third: './src/images/maybach/3.JPG',
+                    fourth: './src/images/maybach/4.JPG',
+                    fifth: './src/images/maybach/5.JPG'
                 },
                 trans: false,
                 rent: true
@@ -276,19 +276,19 @@ export class Model {
                 color: '',
                 specifications: {
                     year: 2010,
-                    passengars: 3,
+                    passangers: 3,
                     trunk: 3,
                     childrenSit: 200
                 },
                 src: './src/images/221black.png',
                 class: 'executive',
                 img: {
-                    main: './src/images/w221black/main.jpg',
-                    first: './src/images/w221black/1.jpg',
-                    second: './src/images/w221black/2.jpg',
-                    third: './src/images/w221black/3.jpg',
-                    fourth: './src/images/w221black/4.jpg',
-                    fifth: './src/images/w221black/5.jpg'
+                    main: './src/images/w221black/main.JPG',
+                    first: './src/images/w221black/1.JPG',
+                    second: './src/images/w221black/2.JPG',
+                    third: './src/images/w221black/3.JPG',
+                    fourth: './src/images/w221black/4.JPG',
+                    fifth: './src/images/w221black/5.JPG'
                 },
                 trans: false,
                 rent: true
@@ -297,16 +297,20 @@ export class Model {
         this.contacts = [
             {
                 name: 'Юлиан',
+                //format +38(0**)-***-**-**
                 showTel: ' +38(099)-117-38-69',
+                //format +380*********  
                 tel: '+380991173869',
+                //format 380********* 
                 viber: '380991173869',
+                //format 380*********
                 whatsApp: '380991173869'
             }
-
         ]
-        // this.findMax();
+        // if create object value with link on object value the link does not work
+        this.contacts[0].whatsAppSrc = `https://api.whatsapp.com/send?phone=${this.contacts[0].whatsApp}`;
+        this.contacts[0].viberSrc = `viber://add?number=${this.contacts[0].viber}`;
     }
-
     filterElementsByClass(clas) {
         // find elements by class
         return this.arrCars.filter((current) => current.class === clas);
@@ -314,12 +318,6 @@ export class Model {
     findElement(name) {
         return this.arrCars.find((current) => current.name === name);
     }
-    // changeState(rent, trans) {
-    //     this.arrCars.forEach((current) => {
-    //         current.rent = rent;
-    //         current.trans = trans;
-    //     })
-    // }
     findMin(el) {
         let valuesArr = Object.values(el);
         return Math.min(...valuesArr)
