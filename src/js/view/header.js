@@ -6,7 +6,7 @@ export class Header {
         this.contacts = contacts;
 
         this.$rentCarsButton =  $('#rentCars');
-        this.$transfersButton = $('#transfers')
+        this.$transfersButton = $('#transfers');
         this.$rentCarsList = $('.rentCarsList');
         this.$transfersCarsList = $('.transfersCarsList');
         this.$mainSiteInfoList = $('.mainSiteInfoList');
@@ -27,11 +27,10 @@ export class Header {
         this.viber = document.querySelectorAll('.communication .viber');
         
         this.lastScrollTop = 0;
-
         this.index = 0;
         this.intervalId;
-        window.onload = (e) => this.checkResolution(e);
-        this.rightMenuSetContacts()
+        window.onload = (e) => this.init(e);
+        this.rightMenuSetContacts();
 
         this.$header.on('dragstart', (e) => e.preventDefault());
         this.$header.mouseover((e) => this.onHeaderMouseOver(e));
@@ -52,10 +51,11 @@ export class Header {
         // scroll page to clicked id
         $('.top-side').click((e) => this.pageAnimate(e));
         $(window).on('orientationchange', (e) => this.checkResolution(e));
-        $(window).on('scroll',() => this.showTopMenu())
+        $(window).on('scroll', () => this.showTopMenu());
     }
-
-
+    init(e) {
+        this.checkResolution(e);
+    }
     showTopMenu(){
         if(screen.width < 900) {
             let currentScroll = $(window).scrollTop();
@@ -71,12 +71,8 @@ export class Header {
             this.lastScrollTop = currentScroll;
         }
     }
-
-
-
     checkResolution(e) {
-        if(screen.width < 900) {
-            this.$carsMenu.css('display', 'none');
+        if(screen.width < 1024) {
             this.createOpenMenuButton();
         } else {
             this.$carsMenu.removeClass('small-cars-menu');
@@ -175,6 +171,9 @@ export class Header {
     }
     showRentCarsList(e) {
         let carClickedClass = $(e.target).attr('class');
+        // get first class of the element
+        carClickedClass = carClickedClass.split(' ');
+        carClickedClass = carClickedClass[0];
         let newCarsArrByClass = this.filterCars(carClickedClass);
         this.rebuildCarsList(newCarsArrByClass);
         this.hideSmallCarsMenu(e);
@@ -182,13 +181,14 @@ export class Header {
         this.createButton();
     }
     showInfo(e) {
+        let userLang = this.getSavedLang();
         // set element display:flex to make element visible 
         let clickedElement = $(e.target);
 
-        clickedElement.hasClass('conditions') ? this.$infoContainer.html(this.conditionsTemplate())
-        : clickedElement.hasClass('payments-method') ? this.$infoContainer.html(this.paymentsMethodTemplate())
-        : clickedElement.hasClass('transfer-conditions') ? this.$infoContainer.html(this.transferConditions())
-        : clickedElement.hasClass('about-company') ? this.$infoContainer.html(this.aboutCompanyTemplate())
+        clickedElement.hasClass('conditions') ? this.$infoContainer.html(this.conditionsTemplate(userLang))
+        : clickedElement.hasClass('payments-method') ? this.$infoContainer.html(this.paymentsMethodTemplate(userLang))
+        : clickedElement.hasClass('transfer-conditions') ? this.$infoContainer.html(this.transferConditions(userLang))
+        : clickedElement.hasClass('about-company') ? this.$infoContainer.html(this.aboutCompanyTemplate(userLang))
         : null ;
         this.hideSmallCarsMenu(e);
         // if element has class isDisabled or on close button click we dont show menu 
@@ -201,17 +201,16 @@ export class Header {
         }
     }
     hideSmallCarsMenu(e) {
-        console.log('is working')
         this.$carsMenu.hasClass('small-cars-menu') ? this.toggleSmallCarsMenu() : null;
         this.changeButtonImg(e);
     }
     onLeftSliderClick() {
         clearInterval(this.intervalId);
-        this.slideElementLeft();
+        this.slideElementRight();
     }
     onRightSliderClick() {
         clearInterval(this.intervalId);
-        this.slideElementRight();
+        this.slideElementLeft();
     }
     slideElementLeft() {
         let $bgContainer = $('.background-container').children('div');

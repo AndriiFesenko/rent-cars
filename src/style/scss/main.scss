@@ -80,6 +80,9 @@ header {
                     box-sizing: border-box;
                     text-decoration: none;
                     opacity: 0;
+                    //...........
+                    width: 120px;
+                    //...........
                     animation-name: moveBott;
                     animation-duration: 1s;
                     animation-fill-mode: forwards;
@@ -212,7 +215,7 @@ header {
             }
         }
         ul#cars-menu {
-            display: flex;
+            display: none;
             margin: 0px 100px 0px 0px;
             >li {
                 position: relative;
@@ -275,6 +278,20 @@ header {
                }
             }
         }
+        .change-language-bttns {
+            display: flex;
+            position: absolute;
+            top: 5px;
+            right: 50px;
+            background-color: rgba(0,0,0,0);
+            color: grey;
+            border: none;
+            padding: 0px;
+            margin: 0px;
+            font-size: 15px;
+            height: 20px;
+            width: 80px;
+        }
         #open-menu-button {
             display: none;
             >img {
@@ -287,10 +304,13 @@ header {
             flex-direction: column;
             position: absolute;
             top: 95px;
-            background-color: black;
+            background-color: rgba(255,255,255,0);
             right: 0px;
             left: 0px;
             align-items: center; 
+            animation-name: show-mobil-menu;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
             animation-name: moveBott;
             animation-duration: .5s;
             animation-fill-mode: forwards;
@@ -324,15 +344,14 @@ header {
     .top-side.active {
         height: 100%;
         position: fixed;
-        right: 0px;
         left: 0px;
+        right: 0px;
         align-items: flex-start;
     }
     .communication {
         position: fixed;
         top: 25%;
         z-index: 2;
-        // margin-right: 10px;
         right: -180px;
             div {
                 position: relative;
@@ -404,6 +423,10 @@ main {
     .carParkTitle {
         font-size: 25px;
         font-family: "ProximaBold";
+        h2 {
+            font-size: inherit;
+            font-family: inherit;
+        }
     }
     .main-menu-buttons {
         display: flex;
@@ -479,6 +502,7 @@ main {
                         font-family: "ProximaRegular";
                         font-size: 12px;
                         padding: 0px;
+                        justify-content: center;
                         &:hover {
                             background-color: $mainColor;
                             border: 1px solid $mainColor;
@@ -746,6 +770,26 @@ footer {
             height: 90% !important;
             display: flex;
             align-items: center;
+            .arrow-down {
+                height: 70px;
+                position: absolute;
+                bottom: 50px;
+                opacity: 0;
+                &.active {
+                    animation-name: move-finger-arrow;
+                    animation-delay: 2s;
+                    animation-duration: 3s;
+                }
+                @keyframes move-finger-arrow {
+                    0%{opacity: 1}
+                    from{bottom: 50px}
+                    to{bottom: 230px}
+                    99%{opacity: 1}
+                }
+                img {
+                    height: 100%;
+                }
+            }
             .dialog-img-container {
                 width: 48%;
                 height: 100%;
@@ -923,6 +967,7 @@ footer {
         display: none;
     }
 }
+
 body.noScrolling{
     overflow: hidden;
     height: 100%;

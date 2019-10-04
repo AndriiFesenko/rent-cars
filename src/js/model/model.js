@@ -5,9 +5,7 @@ export class Model {
     constructor() {
         this.arrCars = [
             {
-                name: 'Mercedes-Benz S-Class белый',
-                description: 'Аренда авто',
-                transferDescription: 'Трансфер',
+                name: 'Mercedes-Benz S-Class',
                 price: 1100,
                 transferPrice: {
                     city: 3000,
@@ -42,9 +40,7 @@ export class Model {
                 rent: true
             },
             {
-                name: 'Mercedes-Benz E-Class белый',
-                description: 'Аренда авто',
-                transferDescription: 'Трансфер',
+                name: 'Mercedes-Benz E-Class',
                 price: 500,
                 transferPrice: {
                     city: 1400,
@@ -78,9 +74,7 @@ export class Model {
                 rent: true
             },
             {
-                name: 'Mercedes-Benz S-Class чёрный',
-                description: 'Аренда авто',
-                transferDescription: 'Трансфер',
+                name: 'Mercedes-Benz S-Class',
                 price: 1100,
                 transferPrice: {
                     city: 3500,
@@ -114,9 +108,7 @@ export class Model {
                 rent: true
             },
             {
-                name: 'Mercedes-Benz E-Class чёрный',
-                description: 'Аренда авто',
-                transferDescription: 'Трансфер',
+                name: 'Mercedes-Benz E-Class',
                 price: 500,
                 transferPrice: {
                     city: 1400,
@@ -150,9 +142,7 @@ export class Model {
                 rent: true
             },
             {
-                name: 'Mercedes-Benz ML-Class чёрный',
-                description: 'Аренда авто',
-                transferDescription: 'Трансфер',
+                name: 'Mercedes-Benz ML-Class',
                 price: 600,
                 transferPrice: {
                     city: 1600,
@@ -186,9 +176,7 @@ export class Model {
                 rent: true
             },
             {
-                name: 'Mercedes-Benz G-Class чёрный',
-                description: 'Аренда авто',
-                transferDescription: 'Трансфер',
+                name: 'Mercedes-Benz G-Class',
                 price: 800,
                 transferPrice: {
                     city: 2500,
@@ -223,8 +211,6 @@ export class Model {
             },
             {
                 name: 'Maybach 62',
-                description: 'Аренда авто',
-                transferDescription: 'Трансфер',
                 price: 2500,
                 transferPrice: {
                     city: 5500,
@@ -258,9 +244,7 @@ export class Model {
                 rent: true
             },
             {
-                name: 'Mercedes-Benz S-Class 221 чёрный',
-                description: 'Аренда авто',
-                transferDescription: 'Трансфер',
+                name: 'Mercedes-Benz S-Class 221',
                 price: 700,
                 transferPrice: {
                     city: 2000,
@@ -310,6 +294,55 @@ export class Model {
         // if create object value with link on object value the link does not work
         this.contacts[0].whatsAppSrc = `https://api.whatsapp.com/send?phone=${this.contacts[0].whatsApp}`;
         this.contacts[0].viberSrc = `viber://add?number=${this.contacts[0].viber}`;
+        this.buttons = document.querySelector('.change-language-bttns');
+        this.lang = '';
+        this.buttons.addEventListener('click', (e) => this.onChangeLangButtonClick(e));
+    }
+    onChangeLangButtonClick(e) {
+        this.lang = this.getLang(e);
+        this.setLang(this.lang);
+        this.renderElement(this.arrCars, this.lang);
+    }
+    getSavedLang() {
+        return this.lang ? this.lang : this.getUserLang()
+    }
+    getUserLang() {
+        let userLang = navigator.language || navigator.languages;
+        userLang = userLang.toUpperCase();
+        return userLang
+    }
+    adaptUserLangSite() {
+        let userLang = this.getUserLang();
+        userLang.includes('EN') ? this.setLang('EN') 
+                    : userLang.includes('RU') ? this.setLang('RU')
+                    : userLang.includes('UK') ? this.setLang('UK')
+                    : this.setLang('UK');
+    }
+    getLang(e) {
+        // get value of selected option to change language
+        return e.target.className != 'buttons' && this.buttons.value;
+    }
+    
+    setLang(lang) {
+        let langEN = document.querySelectorAll('.lang-EN');
+        let langRU = document.querySelectorAll('.lang-RU');
+        let langUK = document.querySelectorAll('.lang-UK');
+
+        this.hideOtherLanguageBlocks(langEN);
+        this.hideOtherLanguageBlocks(langRU);
+        this.hideOtherLanguageBlocks(langUK);
+        this.showUserLangModel(lang);
+    }
+    showUserLangModel(lang) {
+        let element = document.querySelectorAll(`.lang-${lang}`);
+        element.forEach((el) => {
+            el.style.display = 'flex'
+        })
+    }
+    hideOtherLanguageBlocks(blocks) {
+        blocks.forEach((el) => {
+            el.style.display = 'none';
+        })
     }
     filterElementsByClass(clas) {
         // find elements by class
